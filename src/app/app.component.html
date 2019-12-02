@@ -1,14 +1,121 @@
+<div fxLayout fxLayoutAlign="center center">
+  <mat-form-field fxFlex="40%">
+    <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="Filtro">
+  </mat-form-field>
+</div>
 
-<table>
-  <thead>
-    <th>
-        Numero Solicitud EDP
-    </th>
-  </thead>
-  <tbody>
-    <tr *ngFor="let item of items | async">
-      <td>{{item.solicitudEDP}}</td>
-    </tr>
-  </tbody>
-</table>
-<router-outlet></router-outlet>
+<div class="example-container mat-elevation-z8">
+  <mat-table #table [dataSource]="dataSource" matSort matSortStart="desc">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+
+    <!-- Name Column -->
+    
+    <ng-container matColumnDef="solicitudEDP">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Numero de Solicitud EDP </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.solicitudEDP}} </mat-cell>
+    </ng-container>
+
+    <!-- Departamento Column -->
+    <ng-container matColumnDef="departamento">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Departamento </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.capituloUno.departamento}} </mat-cell>
+    </ng-container>
+
+    <!-- Municipio Column -->
+    <ng-container matColumnDef="municipio">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Municipio </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.capituloUno.municipio}} </mat-cell>
+    </ng-container>
+
+    <!-- Documento Propiedad Column -->
+    <ng-container matColumnDef="documentoPropiedad">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Resolucion de Adjudicación </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.capituloDos.documentoPropiedad}} </mat-cell>
+    </ng-container>
+
+    <!-- Actividad Diferente Column -->
+    <ng-container matColumnDef="actividadDiferente">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Actividad Diferente </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.capituloDos.actividadDiferente}} </mat-cell>
+    </ng-container>
+
+    <!-- Grupo Etario Column -->
+    <ng-container matColumnDef="grupoEtario">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Grupo Etario </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.capituloDos.grupoEtario}} </mat-cell>
+    </ng-container>
+
+    <!-- Abandono Column -->
+    <ng-container matColumnDef="estadoAbandono">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Abandono </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.capituloDos.estadoAbandono}} </mat-cell>
+    </ng-container>
+    
+    <!-- Infraestructura Instalada Column -->
+    <ng-container matColumnDef="infraestructuraInstalada">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Infraestructura Instalada </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.capituloTres.infraestructuraInstalada}} </mat-cell>
+    </ng-container>
+
+    <!-- Estado Infraestrutura Column -->
+    <ng-container matColumnDef="estadoInfraestructura">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Estado Infraestrutura </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.capituloTres.estadoInfraestructura}} </mat-cell>
+    </ng-container>
+
+    <!-- Exisistia Infraestructura Column -->
+    <ng-container matColumnDef="tipoInfraestructura">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Exisistia Infraestructura </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.capituloTres.tipoInfraestructura}} </mat-cell>
+    </ng-container>
+
+    <!-- Inversión Infraestructura Column -->
+    <ng-container matColumnDef="inversionInfraestructura">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Inversión Infraestructura </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.capituloTres.inversionInfraestructura}} </mat-cell>
+    </ng-container>
+
+    <!-- Energia Electrica Column -->
+    <ng-container matColumnDef="energiaElectrica">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Energia Electrica </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.capituloTres.energiaElectrica}} </mat-cell>
+    </ng-container>
+
+    <!-- Abasteciomiento Agua Column -->
+    <ng-container matColumnDef="abasteciomientoAgua">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Abasteciomiento Agua </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.capituloTres.abasteciomientoAgua}} </mat-cell>
+    </ng-container>
+
+    <!-- Actividad Adjudicada Column -->
+    <ng-container matColumnDef="actividadAdjudicada">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Actividad Adjudicada </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.capituloCuatro.actividadAdjudicada}} </mat-cell>
+    </ng-container>
+
+    <!-- Calidad Servicio Prestado Column -->
+    <ng-container matColumnDef="calidadServicioPrestado">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Calidad Servicio Prestado </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.capituloCuatro.calidadServicioPrestado}} </mat-cell>
+    </ng-container>
+
+    <!-- Inversion de Recursos Column -->
+    <ng-container matColumnDef="inversionActividades">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Inversion de Recursos </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.capituloCuatro.inversionActividades}} </mat-cell>
+      </ng-container>
+
+    <!-- User Column -->
+    <ng-container matColumnDef="user">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Usuario </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.user}} </mat-cell>
+    </ng-container>
+
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>
