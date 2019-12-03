@@ -1,2 +1,4 @@
+<nav *ngIf="auth.user$ | async">
+    <button mat-button (click)="signOut()">Cerrar Sesión</button>
+</nav>
 <router-outlet></router-outlet>
-<app-index></app-index>
