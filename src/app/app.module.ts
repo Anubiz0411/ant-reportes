@@ -6,19 +6,34 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
  
-import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
+
+//AngularFire
+import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule, StorageBucket } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
 
+//Forms
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormGroup, FormControl } from '@angular/forms'; 
+
 //Material design
-import { MatTableModule, MatInputModule, MatButtonModule, MatSortModule, MatFormFieldModule} from '@angular/material';
- 
+import { MatTableModule, 
+  MatInputModule, 
+  MatButtonModule, 
+  MatSortModule, 
+  MatFormFieldModule, 
+  MatIconModule,
+  MatCardModule,
+  MatProgressSpinnerModule
+} from '@angular/material';
+
+//Components
 import { LoginComponent } from './components/login/login.component';
 import { IndexComponent } from './components/index/index.component';
+import { ShowComponent } from './components/show/show.component';
 
  
 @NgModule({
@@ -26,11 +41,12 @@ import { IndexComponent } from './components/index/index.component';
     AppComponent,
     LoginComponent,
     IndexComponent,
+    ShowComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatTableModule, MatInputModule, MatButtonModule, MatSortModule, MatFormFieldModule,
+    MatTableModule, MatInputModule, MatButtonModule, MatSortModule, MatFormFieldModule, MatCardModule, MatProgressSpinnerModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
@@ -40,9 +56,14 @@ import { IndexComponent } from './components/index/index.component';
   exports: [
     MatFormFieldModule,
     MatSortModule,
-    MatInputModule
+    MatInputModule,
+    MatIconModule,
+    MatTableModule,
+    MatCardModule,
+    MatProgressSpinnerModule
   ],
   providers: [
+    AngularFireAuthGuard,
   ],
   bootstrap: [AppComponent]
 })

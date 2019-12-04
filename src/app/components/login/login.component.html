@@ -1,1 +1,30 @@
-<p>login works!</p>
+<mat-card *ngIf="!logging; else spinner" class="screen-centered">
+    <mat-card-header>        
+        <mat-card-title>Iniciar Sesión</mat-card-title>
+    </mat-card-header>
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+        <mat-card-content>
+            <p>
+                <mat-form-field>
+                    <input formControlName="email" matInput placeholder="Correo Electrónico" type="email">
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field>
+                    <input formControlName="password" matInput placeholder="Contraseña" type="password">
+                </mat-form-field>
+            </p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button [disabled]="loginForm.invalid" type="submit" color="favorite">Iniciar Sesión</button>
+            <p class="error" *ngIf="message != ''">{{ message }}</p>
+        </mat-card-actions>
+    </form>
+</mat-card>
+
+<ng-template #spinner>
+    <div class="screen-centered">
+        <mat-spinner></mat-spinner>
+    </div>
+</ng-template>
+

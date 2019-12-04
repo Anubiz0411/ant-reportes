@@ -1,9 +1,9 @@
-import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { DataSource } from '@angular/cdk/collections';
 import { DatabaseService } from '../../services/database.service';
 import { MatSort, MatInputModule } from '@angular/material';
-import { DataBaseSource } from '../../services/dataBaseSource.module';
+import { MatTableDataSource } from '@angular/material/table';
+
 
 @Component({
   selector: 'app-index',
@@ -13,43 +13,48 @@ import { DataBaseSource } from '../../services/dataBaseSource.module';
 
 export class IndexComponent implements OnInit, AfterViewInit {
 
-  dataBaseDetails = {
-    solicitudEDP: '',
-    departamento: '',
-    municipio: '',
-    documentoPropiedad: '',
-    actividadDiferente: '',
-    grupoEtario: '',
-    estadoAbandono: '',
-    infraestructuraInstalada: '',
-    estadoInfraestructura: '',
-    tipoInfraestructura: '',
-    inversionInfraestructura: '',
-    energiaElectrica: '',
-    abasteciomientoAgua: '',
-    actividadAdjudicada: '',
-    calidadServicioPrestado: '',
-    inversionActividades: '',
-    user: '',
-  }
- 
   displayedColumns = ['solicitudEDP', 'departamento', 'municipio', 'documentoPropiedad', 'actividadDiferente', 'grupoEtario', 'estadoAbandono', 'infraestructuraInstalada', 'estadoInfraestructura', 'tipoInfraestructura', 'inversionInfraestructura', 'energiaElectrica', 'abasteciomientoAgua', 'actividadAdjudicada', 'calidadServicioPrestado', 'inversionActividades','user'];
-  dataSource = new DataBaseSource(this.data);
-  
-  @ViewChild(MatSort, {static: false}) sort: MatSort;
+  dataSource = new MatTableDataSource<any>();
+  data:any = [];
 
-  constructor(private data: DatabaseService, private afs: AngularFirestore) { }
+  @ViewChild(MatSort, {static: true}) sort: MatSort;
 
-
-  ngAfterViewInit(): void {
-    this.dataSource.sort = this.sort;  
-  }
-	
-  public doFilter = (value: string) => {
-    this.dataSource.filter = value.trim().toLocaleLowerCase();
-  }
+  constructor(private dataService: DatabaseService) {}
 
   ngOnInit() {
+    this.dataService.getData().subscribe(res => {
+      res.map((item: any) => {
+        this.data.push({
+          solicitudEDP:             item.solicitudEDP,
+          departamento:             item.capituloUno.departamento,
+          municipio:                item.capituloUno.municipio,
+          documentoPropiedad:       item.capituloDos.documentoPropiedad,
+          actividadDiferente:       item.capituloDos.actividadDiferente,
+          grupoEtario:              item.capituloDos.grupoEtario,
+          estadoAbandono:           item.capituloDos.estadoAbandono,
+          infraestructuraInstalada: item.capituloTres.infraestructuraInstalada,
+          estadoInfraestructura:    item.capituloTres.estadoInfraestructura,
+          tipoInfraestructura:      item.capituloTres.tipoInfraestructura,
+          inversionInfraestructura: item.capituloTres.inversionInfraestructura,
+          energiaElectrica:         item.capituloTres.energiaElectrica,
+          abasteciomientoAgua:      item.capituloTres.abasteciomientoAgua,
+          actividadAdjudicada:      item.capituloCuatro.actividadAdjudicada,
+          calidadServicioPrestado:  item.capituloCuatro.calidadServicioPrestado,
+          inversionActividades:     item.capituloCuatro.inversionActividades,
+          user:                     item.user,
+        });
+      });
+      this.dataSource.data = this.data;
+    });
+  }
+
+  ngAfterViewInit() {
+    this.dataSource.sort = this.sort;
+  }
+  
+
+  public doFilter = (value: string) => {
+    this.dataSource.filter = value.trim().toLocaleLowerCase();
   }
 
 }

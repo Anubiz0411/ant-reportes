@@ -4,8 +4,7 @@
   </mat-form-field>
 </div>
 
-<div class="example-container mat-elevation-z8">
-  <mat-table #table [dataSource]="dataSource" matSort matSortStart="desc">
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
 
     <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->
@@ -14,109 +13,111 @@
     <!-- Name Column -->
     
     <ng-container matColumnDef="solicitudEDP">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Numero de Solicitud EDP </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.solicitudEDP}} </mat-cell>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Numero de Solicitud EDP </th>
+      <td mat-cell *matCellDef="let element">
+        <a [routerLink]="['/show', element.solicitudEDP]">
+          {{element.solicitudEDP}}
+        </a>
+      </td>
     </ng-container>
 
     <!-- Departamento Column -->
     <ng-container matColumnDef="departamento">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Departamento </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.capituloUno.departamento}} </mat-cell>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Departamento </th>
+      <td mat-cell *matCellDef="let element"> {{element.departamento}} </td>
     </ng-container>
 
     <!-- Municipio Column -->
     <ng-container matColumnDef="municipio">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Municipio </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.capituloUno.municipio}} </mat-cell>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Municipio </th>
+      <td mat-cell *matCellDef="let element"> {{element.municipio}} </td>
     </ng-container>
 
     <!-- Documento Propiedad Column -->
     <ng-container matColumnDef="documentoPropiedad">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Resolucion de Adjudicación </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.capituloDos.documentoPropiedad}} </mat-cell>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Resolucion de Adjudicación </th>
+      <td mat-cell *matCellDef="let element"> {{element.documentoPropiedad}} </td>
     </ng-container>
 
     <!-- Actividad Diferente Column -->
     <ng-container matColumnDef="actividadDiferente">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Actividad Diferente </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.capituloDos.actividadDiferente}} </mat-cell>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Actividad Diferente </th>
+      <td mat-cell *matCellDef="let element"> {{element.actividadDiferente}} </td>
     </ng-container>
 
     <!-- Grupo Etario Column -->
     <ng-container matColumnDef="grupoEtario">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Grupo Etario </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.capituloDos.grupoEtario}} </mat-cell>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Grupo Etario </th>
+      <td mat-cell *matCellDef="let element"> {{element.grupoEtario}} </td>
     </ng-container>
 
     <!-- Abandono Column -->
     <ng-container matColumnDef="estadoAbandono">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Abandono </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.capituloDos.estadoAbandono}} </mat-cell>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Abandono </th>
+      <td mat-cell *matCellDef="let element"> {{element.estadoAbandono}} </td>
     </ng-container>
     
     <!-- Infraestructura Instalada Column -->
     <ng-container matColumnDef="infraestructuraInstalada">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Infraestructura Instalada </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.capituloTres.infraestructuraInstalada}} </mat-cell>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Infraestructura Instalada </th>
+      <td mat-cell *matCellDef="let element"> {{element.infraestructuraInstalada}} </td>
     </ng-container>
 
     <!-- Estado Infraestrutura Column -->
     <ng-container matColumnDef="estadoInfraestructura">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Estado Infraestrutura </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.capituloTres.estadoInfraestructura}} </mat-cell>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Estado Infraestrutura </th>
+      <td mat-cell *matCellDef="let element"> {{element.estadoInfraestructura}} </td>
     </ng-container>
 
     <!-- Exisistia Infraestructura Column -->
     <ng-container matColumnDef="tipoInfraestructura">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Exisistia Infraestructura </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.capituloTres.tipoInfraestructura}} </mat-cell>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Exisistia Infraestructura </th>
+      <td mat-cell *matCellDef="let element"> {{element.tipoInfraestructura}} </td>
     </ng-container>
 
     <!-- Inversión Infraestructura Column -->
     <ng-container matColumnDef="inversionInfraestructura">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Inversión Infraestructura </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.capituloTres.inversionInfraestructura}} </mat-cell>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Inversión Infraestructura </th>
+      <td mat-cell *matCellDef="let element"> {{element.inversionInfraestructura}} </td>
     </ng-container>
 
     <!-- Energia Electrica Column -->
     <ng-container matColumnDef="energiaElectrica">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Energia Electrica </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.capituloTres.energiaElectrica}} </mat-cell>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Energia Electrica </th>
+      <td mat-cell *matCellDef="let element"> {{element.energiaElectrica}} </td>
     </ng-container>
 
     <!-- Abasteciomiento Agua Column -->
     <ng-container matColumnDef="abasteciomientoAgua">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Abasteciomiento Agua </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.capituloTres.abasteciomientoAgua}} </mat-cell>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Abasteciomiento Agua </th>
+      <td mat-cell *matCellDef="let element"> {{element.abasteciomientoAgua}} </td>
     </ng-container>
 
     <!-- Actividad Adjudicada Column -->
     <ng-container matColumnDef="actividadAdjudicada">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Actividad Adjudicada </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.capituloCuatro.actividadAdjudicada}} </mat-cell>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Actividad Adjudicada </th>
+      <td mat-cell *matCellDef="let element"> {{element.actividadAdjudicada}} </td>
     </ng-container>
 
     <!-- Calidad Servicio Prestado Column -->
     <ng-container matColumnDef="calidadServicioPrestado">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Calidad Servicio Prestado </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.capituloCuatro.calidadServicioPrestado}} </mat-cell>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Calidad Servicio Prestado </th>
+      <td mat-cell *matCellDef="let element"> {{element.calidadServicioPrestado}} </td>
     </ng-container>
 
     <!-- Inversion de Recursos Column -->
-    <ng-container matColumnDef="inversionActividades">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Inversion de Recursos </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.capituloCuatro.inversionActividades}} </mat-cell>
-      </ng-container>
-
-    <!-- User Column -->
-    <ng-container matColumnDef="user">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Usuario </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.user}} </mat-cell>
+  <ng-container matColumnDef="inversionActividades">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Inversion de Recursos </th>
+      <td mat-cell *matCellDef="let element"> {{element.inversionActividades}} </td>
     </ng-container>
 
+  <!-- User Column -->
+  <ng-container matColumnDef="user">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Usuario </th>
+    <td mat-cell *matCellDef="let element"> {{element.user}} </td>
+  </ng-container>
 
-    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-  </mat-table>
-</div>
 
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
