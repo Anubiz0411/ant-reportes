@@ -1,0 +1,14 @@
+table {
+    margin: auto;
+    width: 100%;
+
+}
+ 
+.filter {
+    display: block;
+}
+
+td {
+    text-align: center; 
+}
+

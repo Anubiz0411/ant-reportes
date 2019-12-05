@@ -1,7 +1,7 @@
 {
   "hosting": {
     "site": "ant-reportes",
-    "public": "dist",
+    "public": "dist/ant-reportes",
     "ignore": [
       "firebase.json",
       "**/.*",
