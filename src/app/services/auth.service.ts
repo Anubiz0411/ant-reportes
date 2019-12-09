@@ -36,6 +36,7 @@ export class AuthService {
       .then(userData => {        
         this.afs.doc<User>(`users/${userData.user.uid}`).valueChanges().subscribe((user: any) => {
           if (user.roles.admin) {
+            this.updateUserData(user);
             resolve(userData);
             this.router.navigate(['']);
           } else {
@@ -52,15 +53,27 @@ export class AuthService {
   }
 
   private updateUserData(user) {
-    const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
-
-    const data = {
-      uid: user.uid,
-      email: user.email,
-      displayName: user.displayName,
-      photoURL: user.photoURL
-    };
-
+    const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
+    let data: any;
+    if (user.roles.admin) {
+      data = {
+        uid: user.uid,
+        email: user.email,
+        roles: {
+          user: true,
+          admin: true,
+        }
+      };
+    } else {
+      data = {
+        uid: user.uid,
+        email: user.email,
+        roles: {
+          user: true,
+          admin: false,
+        }
+      };
+    }
     return userRef.set(data, {merge: true});
   }
   
