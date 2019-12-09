@@ -3,6 +3,7 @@ import { DatabaseService } from '../../services/database.service';
 import { MatSort } from '@angular/material';
 import { MatTableDataSource } from '@angular/material/table';
 import { FormControl } from '@angular/forms';
+import { SelectionModel } from '@angular/cdk/collections';
 
 
 @Component({
@@ -16,6 +17,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
   displayedColumns  = ['solicitudEDP', 'departamento', 'municipio', 'tipoTerritorio', 'zonaManejo', 'documentoPropiedad', 'actividadDiferente', 'grupoEtario', 'estadoAbandono', 'infraestructuraInstalada', 'estadoInfraestructura', 'tipoInfraestructura', 'inversionInfraestructura', 'energiaElectrica', 'abasteciomientoAgua', 'institucion', 'actividadAdjudicada', 'estadoActual','calidadServicioPrestado', 'inversionActividades','user'];
   dataSource        = new MatTableDataSource<any>();
   data:any          = [];
+  selection         = new SelectionModel<DatabaseService>(true, []);
 
   /* Filtros */
   solicitiudFilter                = new FormControl('');

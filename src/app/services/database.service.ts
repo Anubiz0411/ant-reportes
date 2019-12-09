@@ -6,6 +6,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
   providedIn: 'root'
 })
 export class DatabaseService {
+  position: number;
   
   constructor(private afs: AngularFirestore) { }
   
