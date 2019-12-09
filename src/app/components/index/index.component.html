@@ -1,9 +1,97 @@
-<div fxLayout fxLayoutAlign="center center">
-  <mat-form-field fxFlex="40%">
-    <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="Filtro">
-  </mat-form-field>
-</div>
-
+<mat-grid-list cols="10" rowHeight="10:4">
+    <mat-grid-tile>
+        <mat-form-field>
+            <mat-label>Numero de Solicitud EDP</mat-label>
+            <input matInput type="text" [formControl]="solicitiudFilter" placeholder="Numero de Solicitud EDP">
+          </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>Departamento</mat-grid-tile>
+    <mat-grid-tile>Municipio</mat-grid-tile>
+    <mat-grid-tile>
+      <mat-form-field>
+       <mat-label>1.3 - Tipo de Territorio</mat-label>		
+       <mat-select [formControl]="tipoTerritorioFilter">
+         <mat-option value="">Todos</mat-option>
+         <mat-option value="vereda">Vereda</mat-option>
+         <mat-option value="corregimiento">Corregimiento</mat-option>
+         <mat-option value="municipal">Cabecera Municipal</mat-option>
+         <mat-option value="na">N/A</mat-option>
+         <mat-option value="otro">Otro</mat-option>
+       </mat-select>
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <mat-form-field>
+            <mat-label>1.4 - Zona de Manejo</mat-label>
+            <mat-select [formControl]="zonaManejoFilter">
+              <mat-option value="">Todas</mat-option>
+              <mat-option value="pdet">PDET</mat-option>
+              <mat-option value="zrc">ZRC</mat-option>
+              <mat-option value="zvc">Zona Veredales de Concentración</mat-option>
+              <mat-option value="na">N/A</mat-option>
+              <mat-option value="otro">Otro</mat-option>
+            </mat-select>
+          </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <mat-form-field>
+            <mat-label>2.3 - Resolución de Adjudicación</mat-label>
+            <mat-select [formControl]="documentoPropiedadFilter">
+              <mat-option value="">Todas</mat-option>
+              <mat-option value="registrada">Resolución de adjudicación registrada</mat-option>
+              <mat-option value="sin registrar">Resolución de adjudicación sin registrar</mat-option>
+              <mat-option value="otro">Otro</mat-option>
+            </mat-select>
+          </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-form-field>
+        <mat-label>2.6 - Actividad Diferente</mat-label>
+        <mat-select [formControl]="actividadDiferenteFilter">
+          <mat-option value="">Todas</mat-option>
+          <mat-option value="si">Si</mat-option>
+          <mat-option value="no">No</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <mat-form-field>
+            <mat-label>2.9 - Grupo Etario</mat-label>
+            <mat-select [formControl]="grupoEtarioFilter">
+              <mat-option value="">Todos</mat-option>
+              <mat-option value="primera infacia">Primera Infacia</mat-option>
+              <mat-option value="infancia">Infancia</mat-option>
+              <mat-option value="preadolescentes">Preadolescentes</mat-option>
+              <mat-option value="adolescentes">Adolescentes</mat-option>
+              <mat-option value="adultos">Adultos</mat-option>
+              <mat-option value="adultos mayores">Adultos Mayores</mat-option>
+              <mat-option value="todas anteriores">Todas las Anteriores</mat-option>
+              <mat-option value="ninguna">Ninguna</mat-option>
+            </mat-select>
+          </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-form-field>
+        <mat-label>2.10 - Abandono</mat-label>
+        <mat-select [formControl]="estadoAbandonoFilter">
+          <mat-option value="">Todas</mat-option>
+          <mat-option value="si">Si</mat-option>
+          <mat-option value="no">No</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-form-field>
+        <mat-label>3.1 - Infraestructura Instalada</mat-label>
+        <mat-select [formControl]="infraestructuraInstaladaFilter">
+          <mat-option value="">Todas</mat-option>
+          <mat-option value="si">Si</mat-option>
+          <mat-option value="no">No</mat-option>
+          <mat-option value="na">N/A</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-grid-tile>
+</mat-grid-list>
 <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
 
     <!--- Note that these columns can be defined in any order.
@@ -13,7 +101,9 @@
     <!-- Name Column -->
     
     <ng-container matColumnDef="solicitudEDP">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Numero de Solicitud EDP </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> 
+        <div class="header">Numero de Solicitud EDP</div>
+      </th>
       <td mat-cell *matCellDef="let element">
         <a [routerLink]="['/show', element.solicitudEDP]">
           {{element.solicitudEDP}}
@@ -23,91 +113,117 @@
 
     <!-- Departamento Column -->
     <ng-container matColumnDef="departamento">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Departamento </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> 1.1 Departamento </th>
       <td mat-cell *matCellDef="let element"> {{element.departamento}} </td>
     </ng-container>
 
     <!-- Municipio Column -->
     <ng-container matColumnDef="municipio">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Municipio </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> 1.2 Municipio </th>
       <td mat-cell *matCellDef="let element"> {{element.municipio}} </td>
     </ng-container>
 
     <!-- Documento Propiedad Column -->
+    <ng-container matColumnDef="tipoTerritorio">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> 
+         <div class="header"> 1.3 Tipo de Territorio</div>
+        </th>
+      <td mat-cell *matCellDef="let element"> {{element.tipoTerritorio}} </td>
+    </ng-container>
+
+    <!-- Documento Propiedad Column -->
+    <ng-container matColumnDef="zonaManejo">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> 1.4 Zona de Manejo </th>
+      <td mat-cell *matCellDef="let element"> {{element.zonaManejo}} </td>
+    </ng-container>
+
+    <!-- Documento Propiedad Column -->
     <ng-container matColumnDef="documentoPropiedad">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Resolucion de Adjudicación </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> 2.3 Resolucion de Adjudicación </th>
       <td mat-cell *matCellDef="let element"> {{element.documentoPropiedad}} </td>
     </ng-container>
 
     <!-- Actividad Diferente Column -->
     <ng-container matColumnDef="actividadDiferente">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Actividad Diferente </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> 2.6 Actividad Diferente </th>
       <td mat-cell *matCellDef="let element"> {{element.actividadDiferente}} </td>
     </ng-container>
 
     <!-- Grupo Etario Column -->
     <ng-container matColumnDef="grupoEtario">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Grupo Etario </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> 2.9 Grupo Etario </th>
       <td mat-cell *matCellDef="let element"> {{element.grupoEtario}} </td>
     </ng-container>
 
     <!-- Abandono Column -->
     <ng-container matColumnDef="estadoAbandono">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Abandono </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> 2.10 Abandono </th>
       <td mat-cell *matCellDef="let element"> {{element.estadoAbandono}} </td>
     </ng-container>
     
     <!-- Infraestructura Instalada Column -->
     <ng-container matColumnDef="infraestructuraInstalada">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Infraestructura Instalada </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> 3.1 Infraestructura Instalada </th>
       <td mat-cell *matCellDef="let element"> {{element.infraestructuraInstalada}} </td>
     </ng-container>
 
     <!-- Estado Infraestrutura Column -->
     <ng-container matColumnDef="estadoInfraestructura">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Estado Infraestrutura </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> 3.2 Estado Infraestrutura </th>
       <td mat-cell *matCellDef="let element"> {{element.estadoInfraestructura}} </td>
     </ng-container>
 
     <!-- Exisistia Infraestructura Column -->
     <ng-container matColumnDef="tipoInfraestructura">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Exisistia Infraestructura </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> 3.3. Exisistia Infraestructura </th>
       <td mat-cell *matCellDef="let element"> {{element.tipoInfraestructura}} </td>
     </ng-container>
 
     <!-- Inversión Infraestructura Column -->
     <ng-container matColumnDef="inversionInfraestructura">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Inversión Infraestructura </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> 3.4 Inversión Infraestructura </th>
       <td mat-cell *matCellDef="let element"> {{element.inversionInfraestructura}} </td>
     </ng-container>
 
     <!-- Energia Electrica Column -->
     <ng-container matColumnDef="energiaElectrica">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Energia Electrica </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> 3.5 Energia Electrica </th>
       <td mat-cell *matCellDef="let element"> {{element.energiaElectrica}} </td>
     </ng-container>
 
     <!-- Abasteciomiento Agua Column -->
     <ng-container matColumnDef="abasteciomientoAgua">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Abasteciomiento Agua </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> 3.6 Abasteciomiento Agua </th>
       <td mat-cell *matCellDef="let element"> {{element.abasteciomientoAgua}} </td>
+    </ng-container>
+
+    <!-- Institucion Column -->
+    <ng-container matColumnDef="institucion">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> 4.4 Institucion Perteneciente </th>
+      <td mat-cell *matCellDef="let element"> {{element.institucion}} </td>
     </ng-container>
 
     <!-- Actividad Adjudicada Column -->
     <ng-container matColumnDef="actividadAdjudicada">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Actividad Adjudicada </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> 4.7 Actividad Adjudicada </th>
       <td mat-cell *matCellDef="let element"> {{element.actividadAdjudicada}} </td>
+    </ng-container>
+
+    <!-- Estado Actual Column -->
+    <ng-container matColumnDef="estadoActual">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> 4.8 Estado Actual </th>
+      <td mat-cell *matCellDef="let element"> {{element.estadoActual}} </td>
     </ng-container>
 
     <!-- Calidad Servicio Prestado Column -->
     <ng-container matColumnDef="calidadServicioPrestado">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Calidad Servicio Prestado </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> 4.9 Calidad Servicio Prestado </th>
       <td mat-cell *matCellDef="let element"> {{element.calidadServicioPrestado}} </td>
     </ng-container>
 
     <!-- Inversion de Recursos Column -->
   <ng-container matColumnDef="inversionActividades">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Inversion de Recursos </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> 4.10 Inversion de Recursos </th>
       <td mat-cell *matCellDef="let element"> {{element.inversionActividades}} </td>
     </ng-container>
 

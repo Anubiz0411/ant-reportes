@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "site": "ant-reportes",
+    "public": "dist/ant-reportes",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

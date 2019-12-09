@@ -27,9 +27,10 @@ import { MatTableModule,
   MatFormFieldModule, 
   MatIconModule,
   MatCardModule,
-  MatProgressSpinnerModule
+  MatProgressSpinnerModule,
+  MatSelectModule,
+  MatGridListModule
 } from '@angular/material';
-
 //Components
 import { LoginComponent } from './components/login/login.component';
 import { IndexComponent } from './components/index/index.component';
@@ -46,7 +47,7 @@ import { ShowComponent } from './components/show/show.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatTableModule, MatInputModule, MatButtonModule, MatSortModule, MatFormFieldModule, MatCardModule, MatProgressSpinnerModule,
+    MatTableModule, MatInputModule, MatButtonModule, MatSortModule, MatFormFieldModule, MatCardModule, MatProgressSpinnerModule,MatSelectModule,MatGridListModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
@@ -60,7 +61,9 @@ import { ShowComponent } from './components/show/show.component';
     MatIconModule,
     MatTableModule,
     MatCardModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatSelectModule,
+    MatGridListModule,
   ],
   providers: [
     AngularFireAuthGuard,
