@@ -20,7 +20,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormGroup, FormControl } from '@angular/forms'; 
 
 //Material design
-import { MatTableModule, 
+import { 
+  MatTableModule, 
   MatInputModule, 
   MatButtonModule, 
   MatSortModule, 
@@ -30,7 +31,9 @@ import { MatTableModule,
   MatProgressSpinnerModule,
   MatSelectModule,
   MatGridListModule,
-  MatCheckboxModule
+  MatCheckboxModule,
+  MatToolbarModule,
+  MatSidenavModule
 } from '@angular/material';
 //Components
 import { LoginComponent } from './components/login/login.component';
@@ -49,7 +52,8 @@ import { MatTableExporterModule } from 'mat-table-exporter';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatTableModule, MatInputModule, MatButtonModule, MatSortModule, MatFormFieldModule, MatCardModule, MatProgressSpinnerModule,MatSelectModule,MatGridListModule,MatCheckboxModule,MatTableExporterModule,
+    MatTableModule, MatInputModule, MatButtonModule, MatSortModule, MatFormFieldModule, MatCardModule, MatProgressSpinnerModule,MatSelectModule,MatGridListModule,MatCheckboxModule,
+    MatTableExporterModule,MatToolbarModule, MatSidenavModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,

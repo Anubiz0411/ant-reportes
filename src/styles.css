@@ -3,4 +3,16 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { 
+    margin: 0; 
+    color: #6E6F72;
+    font-size: 12px;
+    max-width: 100%;
+    min-width: 360px;
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+}
+
+.mat-sort-header-arrow {
+    color: #F4AE2F !important;
+}
+

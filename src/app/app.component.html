@@ -1,4 +1,12 @@
 <nav *ngIf="auth.user$ | async">
-    <button mat-button (click)="signOut()">Cerrar Sesión</button>
+    <mat-toolbar  class="navbar" layout-align="center" flex>
+        Registros de Datos
+        <div class="button-logut">
+            <button class="logut-button" mat-button (click)="signOut()">Cerrar Sesión</button>
+        </div>
+    </mat-toolbar>
+    <div class="imagen-cabezera">
+        <img class="cabezera-imagen" src="../assets/images/shapes.jpg" alt="" />
+    </div>
 </nav>
 <router-outlet></router-outlet>

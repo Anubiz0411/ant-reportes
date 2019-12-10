@@ -28,6 +28,16 @@ export class IndexComponent implements OnInit, AfterViewInit {
   grupoEtarioFilter               = new FormControl('');
   estadoAbandonoFilter            = new FormControl('');
   infraestructuraInstaladaFilter  = new FormControl('');
+  estadoInfraestructuraFilter     = new FormControl('');
+  tipoInfraestructuraFilter       = new FormControl('');
+  inversionInfraestructuraFilter  = new FormControl('');
+  energiaElectricaFilter          = new FormControl('');
+  abasteciomientoAguaFilter       = new FormControl('');
+  institucionFilter               = new FormControl('');
+  actividadAdjudicadaFilter       = new FormControl('');
+  estadoActualFilter              = new FormControl('');
+  calidadServicioPrestadoFilter   = new FormControl('');
+  inversionActividadesFilter   = new FormControl('');
 
   filterValues = {
     solicitudEDP: '',
@@ -38,6 +48,16 @@ export class IndexComponent implements OnInit, AfterViewInit {
     grupoEtario: '',
     estadoAbandono: '',
     infraestructuraInstalada: '',
+    estadoInfraestructura: '',
+    tipoInfraestructura: '',
+    inversionInfraestructura: '',
+    energiaElectrica: '',
+    abasteciomientoAgua: '',
+    institucion: '',
+    actividadAdjudicada: '',
+    estadoActual: '',
+    calidadServicioPrestado: '',
+    inversionActividades: ''
   };
 
   @ViewChild(MatSort, {static: true}) sort: MatSort;
@@ -132,6 +152,76 @@ export class IndexComponent implements OnInit, AfterViewInit {
       }
     )
 
+    this.estadoInfraestructuraFilter.valueChanges.subscribe(
+      estadoInfraestructura => {
+        this.filterValues.estadoInfraestructura = estadoInfraestructura;
+        this.dataSource.filter = JSON.stringify(this.filterValues);
+      }
+    )
+
+    this.tipoInfraestructuraFilter.valueChanges.subscribe(
+      tipoInfraestructura => {
+        this.filterValues.tipoInfraestructura = tipoInfraestructura;
+        this.dataSource.filter = JSON.stringify(this.filterValues);
+      }
+    )
+
+    this.inversionInfraestructuraFilter.valueChanges.subscribe(
+      inversionInfraestructura => {
+        this.filterValues.inversionInfraestructura = inversionInfraestructura;
+        this.dataSource.filter = JSON.stringify(this.filterValues);
+      }
+    )
+
+    this.energiaElectricaFilter.valueChanges.subscribe(
+      energiaElectrica => {
+        this.filterValues.energiaElectrica = energiaElectrica;
+        this.dataSource.filter = JSON.stringify(this.filterValues);
+      }
+    )
+
+    this.abasteciomientoAguaFilter.valueChanges.subscribe(
+      abasteciomientoAgua => {
+        this.filterValues.abasteciomientoAgua = abasteciomientoAgua;
+        this.dataSource.filter = JSON.stringify(this.filterValues);
+      }
+    )
+
+    this.institucionFilter.valueChanges.subscribe(
+      institucion => {
+        this.filterValues.institucion = institucion;
+        this.dataSource.filter = JSON.stringify(this.filterValues);
+      }
+    )
+
+    this.actividadAdjudicadaFilter.valueChanges.subscribe(
+      actividadAdjudicada => {
+        this.filterValues.actividadAdjudicada = actividadAdjudicada;
+        this.dataSource.filter = JSON.stringify(this.filterValues);
+      }
+    )
+
+    this.estadoActualFilter.valueChanges.subscribe(
+      estadoActual => {
+        this.filterValues.estadoActual = estadoActual;
+        this.dataSource.filter = JSON.stringify(this.filterValues);
+      }
+    )
+
+    this.calidadServicioPrestadoFilter.valueChanges.subscribe(
+      calidadServicioPrestado => {
+        this.filterValues.calidadServicioPrestado = calidadServicioPrestado;
+        this.dataSource.filter = JSON.stringify(this.filterValues);
+      }
+    )
+
+    this.inversionActividadesFilter.valueChanges.subscribe(
+      inversionActividades => {
+        this.filterValues.inversionActividades = inversionActividades;
+        this.dataSource.filter = JSON.stringify(this.filterValues);
+      }
+    )
+
   }
 
   ngAfterViewInit() {
@@ -149,6 +239,16 @@ export class IndexComponent implements OnInit, AfterViewInit {
       && data.grupoEtario.toLowerCase().indexOf(searchTerms.grupoEtario) !== -1
       && data.estadoAbandono.toLowerCase().indexOf(searchTerms.estadoAbandono) !== -1
       && data.infraestructuraInstalada.toLowerCase().indexOf(searchTerms.infraestructuraInstalada) !== -1
+      && data.estadoInfraestructura.toLowerCase().indexOf(searchTerms.estadoInfraestructura) !== -1
+      && data.tipoInfraestructura.toLowerCase().indexOf(searchTerms.tipoInfraestructura) !== -1
+      && data.inversionInfraestructura.toLowerCase().indexOf(searchTerms.inversionInfraestructura) !== -1
+      && data.energiaElectrica.toLowerCase().indexOf(searchTerms.energiaElectrica) !== -1
+      && data.abasteciomientoAgua.toLowerCase().indexOf(searchTerms.abasteciomientoAgua) !== -1
+      && data.institucion.toLowerCase().indexOf(searchTerms.institucion) !== -1
+      && data.actividadAdjudicada.toLowerCase().indexOf(searchTerms.actividadAdjudicada) !== -1
+      && data.estadoActual.toLowerCase().indexOf(searchTerms.estadoActual) !== -1
+      && data.calidadServicioPrestado.toLowerCase().indexOf(searchTerms.calidadServicioPrestado) !== -1
+      && data.inversionActividades.toLowerCase().indexOf(searchTerms.inversionActividades) !== -1
      ;
     }
     return filterFunction;

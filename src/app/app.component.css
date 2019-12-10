@@ -1,11 +1,17 @@
-table {
-    width: 100%;
-    overflow-x: auto;
-    overflow-y: hidden;
-    min-width: 500px;
+.mat-toolbar {
+    background-color: #069868;
+    color: white;
 }
- 
-th.mat-header-cell {
-    text-align: left;
-    max-width: 300px;
+
+.logut-button{
+    background-color:  #00906F;
+}
+
+.imagen-cabezera{
+    margin: 10px;
+}
+
+.cabezera-imagen{
+    width: 100%;
+    border-radius: 20px;
 }

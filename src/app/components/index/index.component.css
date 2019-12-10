@@ -1,14 +1,32 @@
 table {
-    margin: auto;
+    margin-left: 10px;
+    margin-right: 10px;
     width: 100%;
-
 }
- 
-.filter {
-    display: block;
+
+.filtros{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.botones-exportar {
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.exportar-boton {
+    background-color: #F4AE2F;
+    color: white;
+}
+
+th {
+    text-align: center;
+    font-size: 12px;
+    background-color: #069868;
+    color: white;
 }
 
 td {
-    text-align: center; 
+    text-align: center;
+    font-size: 12px; 
 }
-

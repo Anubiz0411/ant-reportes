@@ -13,7 +13,39 @@
     padding: 0 auto;
 }
 
+/* .login-page {
+    background: url(./../../assets/images/login-page.jpg) 0/100% 100% no-repeat;
+} */
+.container{
+    background-image: url(../../../assets/images/login-page.jpg);
+    background-size: 50%;
+    background-origin: content-box;
+    padding-top: 73.4em;
+}
 .error {
     font-size: 8px;
     color: red;
+}
+
+.navbar {
+    background-color: #069868;
+    color: #ffffff;
+}
+
+.mat-card-title {
+    color: #069868;
+}
+
+.button-login-center {
+    text-align: center;
+}
+
+.mat-button[disabled][disabled]{
+    background: #82ccb3;
+    color: white;
+}
+
+.button-login {
+    background-color: #069868;
+    color: white;
 }
