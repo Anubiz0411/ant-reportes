@@ -16,3 +16,6 @@ body {
     color: #F4AE2F !important;
 }
 
+.mat-expansion-indicator::after {
+    color: #F4AE2F !important;
+}

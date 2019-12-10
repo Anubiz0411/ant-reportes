@@ -1,9 +1,81 @@
-<p>
-    {{ (item | async)?.solicitudEDP }}
-    {{ (item | async)?.user }}
-</p>
-<mat-card>
-    <mat-card-title>Titulo</mat-card-title>
-    <mat-card-subtitle>Sub Titulo</mat-card-subtitle>
-    <mat-card-content>Contenido</mat-card-content>
-</mat-card>
+<div class="container">
+    <mat-card>
+        <mat-card-title>{{ (item | async)?.solicitudEDP }}</mat-card-title>
+        <mat-card-subtitle>Creado por: {{ (item | async)?.user }}; Ultima modificación: {{ (item | async)?.formularioModificadoEl.seconds * 1000 | date:'yyyy-MM-dd hh:mm:ss' }}</mat-card-subtitle>
+        <mat-card-content>
+            <mat-accordion>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Capitulo 1
+                        </mat-panel-title>
+                        <mat-panel-description>
+                                Identificación del Predio
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                      
+                    <mat-form-field>
+                        <mat-label>1.1 - Departamento</mat-label>
+                        <input matInput value="{{ (item | async)?.capituloUno.departamento }}" >
+                    </mat-form-field>
+                      
+                    <mat-form-field>
+                        <mat-label>1.2 - Municipio</mat-label>
+                        <input matInput value="{{ (item | async)?.capituloUno.municipio }}" >
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>1.3 - Tipo de Territorio</mat-label>
+                        <input matInput value="{{ (item | async)?.capituloUno.tipoTerritorio }}" >
+                    </mat-form-field>
+
+                    <!-- <mat-form-field *ngIf="{{ (item | async)?.capituloUno.tipoTerritorio }} == 'otro'">
+                        <mat-label>1.3.1 - Zona de Manejo Otra</mat-label>
+                        <input matInput value="{{ (item | async)?.capituloUno.zonaManejoOtraCual }}" >
+                    </mat-form-field> -->
+                      
+                    <mat-form-field>
+                        <mat-label>1.4 - Zona de Manejo</mat-label>
+                        <input matInput value="{{ (item | async)?.capituloUno.zonaManejo }}" >
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>1.5 - Nombre de Territorio</mat-label>
+                        <input matInput value="{{ (item | async)?.capituloUno.nombreTerritorio }}">
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>1.6 - Nombre del predio</mat-label>
+                        <input matInput value="{{ (item | async)?.capituloUno.nombrePredio }}">
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>1.7 - Coordenadas del Predio Latitud</mat-label>
+                        <input matInput value="{{ (item | async)?.capituloUno.latitudPredio }}">
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>1.7 - Coordenadas del Predio Longitud</mat-label>
+                        <input matInput value="{{ (item | async)?.capituloUno.longitudPredio }}">
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>1.8 - Mi Localización Latitud</mat-label>
+                        <input matInput value="{{ (item | async)?.capituloUno.latitud }}">
+                    </mat-form-field>
+                    
+                    <mat-form-field>
+                        <mat-label>1.8 - Mi Localización Longitud</mat-label>
+                        <input matInput value="{{ (item | async)?.capituloUno.longitud }}">
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>1.9 - Observaciones Capitulo 1</mat-label>
+                        <textarea matInput value="{{ (item | async)?.capituloUno.observacionesCapituloUno }}"></textarea>
+                    </mat-form-field>
+
+                </mat-expansion-panel>
+            </mat-accordion>
+        </mat-card-content>
+    </mat-card>
+</div>

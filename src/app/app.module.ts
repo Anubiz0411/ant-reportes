@@ -33,7 +33,8 @@ import {
   MatGridListModule,
   MatCheckboxModule,
   MatToolbarModule,
-  MatSidenavModule
+  MatSidenavModule,
+  MatExpansionModule
 } from '@angular/material';
 //Components
 import { LoginComponent } from './components/login/login.component';
@@ -53,7 +54,7 @@ import { MatTableExporterModule } from 'mat-table-exporter';
     BrowserModule,
     AppRoutingModule,
     MatTableModule, MatInputModule, MatButtonModule, MatSortModule, MatFormFieldModule, MatCardModule, MatProgressSpinnerModule,MatSelectModule,MatGridListModule,MatCheckboxModule,
-    MatTableExporterModule,MatToolbarModule, MatSidenavModule,
+    MatTableExporterModule,MatToolbarModule, MatSidenavModule,MatExpansionModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
@@ -72,6 +73,7 @@ import { MatTableExporterModule } from 'mat-table-exporter';
     MatGridListModule,
     MatCheckboxModule,
     MatTableExporterModule,
+    MatExpansionModule
   ],
   providers: [
     AngularFireAuthGuard,

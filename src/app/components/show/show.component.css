@@ -1,0 +1,15 @@
+.container{
+    margin: 10px;
+}
+
+mat-card-title{
+    color: #069868;
+}
+
+mat-card-subtitle{
+    color:  #6E6F72;
+}
+
+mat-form-field{
+    margin-left: 5px;
+}
