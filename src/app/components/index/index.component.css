@@ -9,6 +9,10 @@ table {
     margin-right: 10px;
 }
 
+.filtros mat-form-field{
+    margin-left: 5px;
+}
+
 .botones-exportar {
     margin-left: 10px;
     margin-bottom: 10px;
@@ -17,6 +21,7 @@ table {
 .exportar-boton {
     background-color: #F4AE2F;
     color: white;
+    margin-left: 5px;
 }
 
 th {

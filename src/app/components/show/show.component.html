@@ -75,6 +75,302 @@
                     </mat-form-field>
 
                 </mat-expansion-panel>
+
+                <br>
+
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Capitulo 2
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            Información del Predio
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                      
+                    <mat-form-field>
+                        <mat-label>2.1 - Área del predio</mat-label>
+                        <input matInput value="{{ (item | async)?.capituloDos.areaPredio }}" >
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>2.1.1 - Medidas</mat-label>
+                        <input matInput value="{{ (item | async)?.capituloDos.medida }}" >
+                    </mat-form-field>
+                      
+                    <mat-form-field>
+                        <mat-label>2.2.1 - Colindantes Norte</mat-label>
+                        <input matInput value="{{ (item | async)?.capituloDos.norte }}" >
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>2.2.2 - Colindantes Sur</mat-label>
+                        <input matInput value="{{ (item | async)?.capituloDos.sur }}" >
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>2.2.3 - Colindantes Oeste</mat-label>
+                        <input matInput value="{{ (item | async)?.capituloDos.oeste }}" >
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>2.2.4 - Colindantes Este</mat-label>
+                        <input matInput value="{{ (item | async)?.capituloDos.este }}" >
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>2.3 - Documento Propiedad</mat-label>
+                        <input matInput value="{{ (item | async)?.capituloDos.documentoPropiedad }}" >
+                    </mat-form-field>
+
+                    <!-- <mat-form-field *ngIf="{{ (item | async)?.capituloDos.tipoTerritorio }} == 'otro'">
+                        <mat-label>1.3.1 - Zona de Manejo Otra</mat-label>
+                        <input matInput value="{{ (item | async)?.capituloDos.zonaManejoOtraCual }}" >
+                    </mat-form-field> -->
+                      
+                    <mat-form-field>
+                        <mat-label>2.4 - Entidad de Derecho Público </mat-label>
+                        <input matInput value="{{ (item | async)?.capituloDos.entidadAdjudicada }}" >
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>2.5 - Servicio o Actividad </mat-label>
+                        <input matInput value="{{ (item | async)?.capituloDos.servicioActividad }}">
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>2.5.1 - Tiempo Incial establecido </mat-label>
+                        <input matInput value="{{ (item | async)?.capituloDos.fechaInicialTiempoEstablecido }}">
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>2.5.1 - Tiempo Final establecido </mat-label>
+                        <input matInput value="{{ (item | async)?.capituloDos.fechaFinalTiempoEstablecido }}">
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>2.6 - Actividad Diferente</mat-label>
+                        <input matInput value="{{ (item | async)?.capituloDos.actividadDiferente }}">
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>2.7 - Personas Beneficiadas</mat-label>
+                        <input matInput value="{{ (item | async)?.capituloDos.personasBeneficiadas }}">
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>2.8 - Poblacion Beneficiaria</mat-label>
+                        <input matInput value="{{ (item | async)?.capituloDos.poblacionBeneficiaria }}">
+                    </mat-form-field>
+                    
+                    <mat-form-field>
+                        <mat-label>2.9 - Grupo etario beneficiado </mat-label>
+                        <input matInput value="{{ (item | async)?.capituloDos.grupoEtario }}">
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>2.10 - ¿Se encuentra en estado de abandono?</mat-label>
+                        <input matInput value="{{ (item | async)?.capituloDos.estadoAbandono }}">
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>2.11 - Observaciones Capitulo 2</mat-label>
+                        <textarea matInput value="{{ (item | async)?.capituloDos.observacionesCapituloDos }}"></textarea>
+                    </mat-form-field>
+                </mat-expansion-panel>
+
+                <br>
+
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Capitulo 3
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            Infraestructura, Servicios y Estado del Predio
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                      
+                    <mat-form-field>
+                        <mat-label>3.1 - Infraestructura Instalada</mat-label>
+                        <input matInput value="{{ (item | async)?.capituloTres.infraestructuraInstalada }}" >
+                    </mat-form-field>
+                      
+                    <mat-form-field>
+                        <mat-label>3.2 - Estado general de la infraestructura</mat-label>
+                        <input matInput value="{{ (item | async)?.capituloTres.estadoInfraestructura }}" >
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>3.3 - ¿La infraestructura existía antes?</mat-label>
+                        <input matInput value="{{ (item | async)?.capituloTres.tipoInfraestructura }}" >
+                    </mat-form-field>
+
+                    <!-- <mat-form-field *ngIf="{{ (item | async)?.capituloTres.tipoTerritorio }} == 'otro'">
+                        <mat-label>1.3.1 - Zona de Manejo Otra</mat-label>
+                        <input matInput value="{{ (item | async)?.capituloTres.zonaManejoOtraCual }}" >
+                    </mat-form-field> -->
+                      
+                    <mat-form-field>
+                        <mat-label>3.4 - ¿Inversiones o mejoras posteriores a la adjudicación?</mat-label>
+                        <input matInput value="{{ (item | async)?.capituloTres.inversionInfraestructura }}" >
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>3.5 - ¿El predio cuenta con energía eléctrica?</mat-label>
+                        <input matInput value="{{ (item | async)?.capituloTres.energiaElectrica }}">
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>3.6 - ¿Abasteciomiento Agua?</mat-label>
+                        <input matInput value="{{ (item | async)?.capituloTres.abasteciomientoAgua }}">
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>3.7 - Observaciones Capitulo 3</mat-label>
+                        <textarea matInput value="{{ (item | async)?.capituloTres.observacionesCapituloTres }}"></textarea>
+                    </mat-form-field>
+                </mat-expansion-panel>
+
+                <br>
+
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Capitulo 3
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            Infraestructura, Servicios y Estado del Predio
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                      
+                    <mat-form-field>
+                        <mat-label>3.1 - Infraestructura Instalada</mat-label>
+                        <input matInput value="{{ (item | async)?.capituloTres.infraestructuraInstalada }}" >
+                    </mat-form-field>
+                      
+                    <mat-form-field>
+                        <mat-label>3.2 - Estado general de la infraestructura</mat-label>
+                        <input matInput value="{{ (item | async)?.capituloTres.estadoInfraestructura }}" >
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>3.3 - ¿La infraestructura existía antes?</mat-label>
+                        <input matInput value="{{ (item | async)?.capituloTres.tipoInfraestructura }}" >
+                    </mat-form-field>
+
+                    <!-- <mat-form-field *ngIf="{{ (item | async)?.capituloTres.tipoTerritorio }} == 'otro'">
+                        <mat-label>1.3.1 - Zona de Manejo Otra</mat-label>
+                        <input matInput value="{{ (item | async)?.capituloTres.zonaManejoOtraCual }}" >
+                    </mat-form-field> -->
+                      
+                    <mat-form-field>
+                        <mat-label>3.4 - ¿Inversiones o mejoras posteriores a la adjudicación?</mat-label>
+                        <input matInput value="{{ (item | async)?.capituloTres.inversionInfraestructura }}" >
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>3.5 - ¿El predio cuenta con energía eléctrica?</mat-label>
+                        <input matInput value="{{ (item | async)?.capituloTres.energiaElectrica }}">
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>3.6 - ¿Abasteciomiento Agua?</mat-label>
+                        <input matInput value="{{ (item | async)?.capituloTres.abasteciomientoAgua }}">
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>3.7 - Observaciones Capitulo 3</mat-label>
+                        <textarea matInput value="{{ (item | async)?.capituloTres.observacionesCapituloTres }}"></textarea>
+                    </mat-form-field>
+                </mat-expansion-panel>
+                
+                <br>
+
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Capitulo 4
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            Testimonios
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                      
+                    <mat-form-field>
+                        <mat-label>4.1 - Nombre del Encuestado</mat-label>
+                        <input matInput value="{{ (item | async)?.capituloCuatro.nombre }}" >
+                    </mat-form-field>
+                      
+                    <mat-form-field>
+                        <mat-label>4.2 - Documento de Identificación</mat-label>
+                        <input matInput value="{{ (item | async)?.capituloCuatro.tipoIdentificacion }}" >
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>4.3 - Numero Identificacion</mat-label>
+                        <input matInput value="{{ (item | async)?.capituloCuatro.numeroIdentificacion }}" >
+                    </mat-form-field>
+
+                    <!-- <mat-form-field *ngIf="{{ (item | async)?.capituloCuatro.tipoTerritorio }} == 'otro'">
+                        <mat-label>1.3.1 - Zona de Manejo Otra</mat-label>
+                        <input matInput value="{{ (item | async)?.capituloCuatro.zonaManejoOtraCual }}" >
+                    </mat-form-field> -->
+                      
+                    <mat-form-field>
+                        <mat-label>4.4 - Número Celular</mat-label>
+                        <input matInput value="{{ (item | async)?.capituloCuatro.inversionInfraestructura }}" >
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>4.5 - ¿Tiene correo electrónico?</mat-label>
+                        <input matInput value="{{ (item | async)?.capituloCuatro.tieneEmail }}">
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>4.6 - ¿A qué institución pertenece?</mat-label>
+                        <input matInput value="{{ (item | async)?.capituloCuatro.institucion }}">
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>4.7 - ¿Qué cargo tiene dentro de esta institución?</mat-label>
+                        <input matInput value="{{ (item | async)?.capituloCuatro.cargoInstitucion }}">
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>4.8 - En su concepto, la actividad para la cual se adjudicó este predio se está desarrollando actualmente de la siguiente manera</mat-label>
+                        <input matInput value="{{ (item | async)?.capituloCuatro.actividadAdjudicada }}">
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>4.9 - El estado actual de la infraestructura es</mat-label>
+                        <input matInput value="{{ (item | async)?.capituloCuatro.estadoActual }}">
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>4.10 - El servicio que se presta en el predio adjudicado es</mat-label>
+                        <input matInput value="{{ (item | async)?.capituloCuatro.calidadServicioPrestado }}">
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>4.11 - ¿Se han invertido recursos para mejorar la calidad de los servicios o actividades desarrolladas dentro del predio?</mat-label>
+                        <input matInput value="{{ (item | async)?.capituloCuatro.inversionActividades }}">
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>4.12 - Observaciones Capitulo 4</mat-label>
+                        <textarea matInput value="{{ (item | async)?.capituloCuatro.observacionesCapituloCuatro }}"></textarea>
+                    </mat-form-field>  
+                </mat-expansion-panel>
+
+                <br>
+
+                <img mat-card-image src="{{ (item | async)?.fotos[0].url }}" >
+
+                <mat-form-field>
+                    <mat-label>Observaciones</mat-label>
+                    <textarea matInput value="{{ (item | async)?.fotos[0].observation }}"></textarea>
+                </mat-form-field>
             </mat-accordion>
         </mat-card-content>
     </mat-card>

@@ -1,219 +1,188 @@
 <div class="filtros">
-  <mat-grid-list cols="10" rowHeight="10:4">
-      <mat-grid-tile>
-          <mat-form-field>
-              <mat-label>Numero de Solicitud EDP</mat-label>
-              <input matInput type="text" [formControl]="solicitiudFilter" placeholder="Numero de Solicitud EDP">
-            </mat-form-field>
-      </mat-grid-tile>
-      <mat-grid-tile>Departamento</mat-grid-tile>
-      <mat-grid-tile>Municipio</mat-grid-tile>
-      <mat-grid-tile>
-        <mat-form-field>
-         <mat-label>1.3 - Tipo de Territorio</mat-label>		
-         <mat-select [formControl]="tipoTerritorioFilter">
-           <mat-option value="">Todos</mat-option>
-           <mat-option value="vereda">Vereda</mat-option>
-           <mat-option value="corregimiento">Corregimiento</mat-option>
-           <mat-option value="municipal">Cabecera Municipal</mat-option>
-           <mat-option value="na">N/A</mat-option>
-           <mat-option value="otro">Otro</mat-option>
-         </mat-select>
-        </mat-form-field>
-      </mat-grid-tile>
-      <mat-grid-tile>
-          <mat-form-field>
-              <mat-label>1.4 - Zona de Manejo</mat-label>
-              <mat-select [formControl]="zonaManejoFilter">
-                <mat-option value="">Todas</mat-option>
-                <mat-option value="pdet">PDET</mat-option>
-                <mat-option value="zrc">ZRC</mat-option>
-                <mat-option value="zvc">Zona Veredales de Concentración</mat-option>
-                <mat-option value="na">N/A</mat-option>
-                <mat-option value="otro">Otro</mat-option>
-              </mat-select>
-            </mat-form-field>
-      </mat-grid-tile>
-      <mat-grid-tile>
-          <mat-form-field>
-              <mat-label>2.3 - Resolución de Adjudicación</mat-label>
-              <mat-select [formControl]="documentoPropiedadFilter">
-                <mat-option value="">Todas</mat-option>
-                <mat-option value="registrada">Resolución de adjudicación registrada</mat-option>
-                <mat-option value="sin registrar">Resolución de adjudicación sin registrar</mat-option>
-                <mat-option value="otro">Otro</mat-option>
-              </mat-select>
-            </mat-form-field>
-      </mat-grid-tile>
-      <mat-grid-tile>
-        <mat-form-field>
-          <mat-label>2.6 - Actividad Diferente</mat-label>
-          <mat-select [formControl]="actividadDiferenteFilter">
-            <mat-option value="">Todas</mat-option>
-            <mat-option value="si">Si</mat-option>
-            <mat-option value="no">No</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </mat-grid-tile>
-      <mat-grid-tile>
-          <mat-form-field>
-              <mat-label>2.9 - Grupo Etario</mat-label>
-              <mat-select [formControl]="grupoEtarioFilter">
-                <mat-option value="">Todos</mat-option>
-                <mat-option value="primera infacia">Primera Infacia</mat-option>
-                <mat-option value="infancia">Infancia</mat-option>
-                <mat-option value="preadolescentes">Preadolescentes</mat-option>
-                <mat-option value="adolescentes">Adolescentes</mat-option>
-                <mat-option value="adultos">Adultos</mat-option>
-                <mat-option value="adultos mayores">Adultos Mayores</mat-option>
-                <mat-option value="todas anteriores">Todas las Anteriores</mat-option>
-                <mat-option value="ninguna">Ninguna</mat-option>
-              </mat-select>
-            </mat-form-field>
-      </mat-grid-tile>
-      <mat-grid-tile>
-        <mat-form-field>
-          <mat-label>2.10 - Abandono</mat-label>
-          <mat-select [formControl]="estadoAbandonoFilter">
-            <mat-option value="">Todas</mat-option>
-            <mat-option value="si">Si</mat-option>
-            <mat-option value="no">No</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </mat-grid-tile>
-      <mat-grid-tile>
-        <mat-form-field>
-          <mat-label>3.1 - Infraestructura Instalada</mat-label>
-          <mat-select [formControl]="infraestructuraInstaladaFilter">
-            <mat-option value="">Todas</mat-option>
-            <mat-option value="si">Si</mat-option>
-            <mat-option value="no">No</mat-option>
-            <mat-option value="na">N/A</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </mat-grid-tile>
-      <mat-grid-tile>
-        <mat-form-field>
-          <mat-label>3.2 - Estado Infraestructura</mat-label>
-          <mat-select [formControl]="estadoInfraestructuraFilter">
-            <mat-option value="">Todas</mat-option>
-            <mat-option value="exelente">Exelente</mat-option>
-            <mat-option value="muy bueno">Muy Bueno</mat-option>
-            <mat-option value="bueno">Bueno</mat-option>
-            <mat-option value="regular">Regular</mat-option>
-            <mat-option value="malo">Malo</mat-option>
-            <mat-option value="pesimo">Pésimo</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </mat-grid-tile>
-      <mat-grid-tile>
-        <mat-form-field>
-          <mat-label>3.3 - Exisistia Infraestructura</mat-label>
-          <mat-select [formControl]="tipoInfraestructuraFilter">
-              <mat-option value="">Todas</mat-option>
-              <mat-option value="si">Si</mat-option>
-              <mat-option value="no">No</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </mat-grid-tile>
-      <mat-grid-tile>
-        <mat-form-field>
-          <mat-label>3.4 - Inversion Infraestructura</mat-label>
-          <mat-select [formControl]="inversionInfraestructuraFilter">
-              <mat-option value="">Todas</mat-option>
-              <mat-option value="si">Si</mat-option>
-              <mat-option value="no">No</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </mat-grid-tile>
-      <mat-grid-tile>
-          <mat-form-field>
-            <mat-label>3.5 - Energia Electrica</mat-label>
-            <mat-select [formControl]="energiaElectricaFilter">
-              <mat-option value="">Todas</mat-option>
-              <mat-option value="si">Si</mat-option>
-              <mat-option value="no">No</mat-option>
-              <mat-option value="na">N/A</mat-option>
-            </mat-select>
-          </mat-form-field>
-        </mat-grid-tile>
-      <mat-grid-tile>
-          <mat-form-field>
-            <mat-label>3.6 - Abasteciomiento Agua</mat-label>
-            <mat-select [formControl]="abasteciomientoAguaFilter">
-              <mat-option value="">Todas</mat-option>
-              <mat-option value="si">Si</mat-option>
-              <mat-option value="no">No</mat-option>
-              <mat-option value="na">N/A</mat-option>
-            </mat-select>
-          </mat-form-field>
-        </mat-grid-tile>
-      <mat-grid-tile>
-          <mat-form-field>
-            <mat-label>4.5 - institucion</mat-label>
-            <mat-select [formControl]="institucionFilter">
-              <mat-option value="">Todas</mat-option>
-							<mat-option value="jac">JAC</mat-option>
-							<mat-option value="institucion educativa">Institución Educativa</mat-option>
-							<mat-option value="comunidad territorio">Comunidad</mat-option>
-							<mat-option value="otro">Otro</mat-option>
-            </mat-select>
-          </mat-form-field>
-        </mat-grid-tile>
-      <mat-grid-tile>
-          <mat-form-field>
-            <mat-label>4.7 - Actividad Adjudicada</mat-label>
-            <mat-select [formControl]="actividadAdjudicadaFilter">
-              <mat-option value="">Todas</mat-option>
-							<mat-option value="deacuerdo">Completamente acorde al objetivo de adjudicación</mat-option>
-							<mat-option value="parcialmente">Parcialmente acorde al objetivo</mat-option>
-							<mat-option value="incompatible">Incompatible con la adjudicación</mat-option>
-            </mat-select>
-          </mat-form-field>
-        </mat-grid-tile>
-      <mat-grid-tile>
-          <mat-form-field>
-            <mat-label>4.8 - Estado Actual</mat-label>
-            <mat-select [formControl]="estadoActualFilter">
-              <mat-option value="">Todos</mat-option>
-							<mat-option value="exelente">Exelente</mat-option>
-							<mat-option value="muy bueno">Muy Bueno</mat-option>
-							<mat-option value="bueno">Bueno</mat-option>
-							<mat-option value="regular">Regular</mat-option>
-							<mat-option value="malo">Malo</mat-option>
-							<mat-option value="pesimo">Pésimo</mat-option>
-            </mat-select>
-          </mat-form-field>
-        </mat-grid-tile>
-      <mat-grid-tile>
-          <mat-form-field>
-            <mat-label>4.9 - Calidad Servicio Prestado</mat-label>
-            <mat-select [formControl]="calidadServicioPrestadoFilter">
-              <mat-option value="">Todos</mat-option>
-							<mat-option value="exelente">Exelente</mat-option>
-							<mat-option value="muy bueno">Muy Bueno</mat-option>
-							<mat-option value="bueno">Bueno</mat-option>
-							<mat-option value="regular">Regular</mat-option>
-							<mat-option value="malo">Malo</mat-option>
-							<mat-option value="pesimo">Pésimo</mat-option>
-            </mat-select>
-          </mat-form-field>
-        </mat-grid-tile>
-      <mat-grid-tile>
-          <mat-form-field>
-            <mat-label>4.10 - Inversion Actividades</mat-label>
-            <mat-select [formControl]="inversionActividadesFilter">
-                <mat-option value="">Todas</mat-option>
-                <mat-option value="si">Si</mat-option>
-                <mat-option value="no">No</mat-option>
-            </mat-select>
-          </mat-form-field>
-        </mat-grid-tile>
-  </mat-grid-list>
+    <mat-form-field>
+      <mat-label>Numero de Solicitud EDP</mat-label>
+      <input matInput type="text" [formControl]="solicitiudFilter" placeholder="Numero de Solicitud EDP">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Departamento</mat-label>
+        <input matInput type="text" [formControl]="solicitiudFilter" placeholder="Numero de Solicitud EDP">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Municipio</mat-label>
+      <input matInput type="text" [formControl]="solicitiudFilter" placeholder="Numero de Solicitud EDP">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>1.3 - Tipo de Territorio</mat-label>		
+        <mat-select [formControl]="tipoTerritorioFilter">
+          <mat-option value="">Todos</mat-option>
+          <mat-option value="vereda">Vereda</mat-option>
+          <mat-option value="corregimiento">Corregimiento</mat-option>
+          <mat-option value="municipal">Cabecera Municipal</mat-option>
+          <mat-option value="na">N/A</mat-option>
+          <mat-option value="otro">Otro</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>1.4 - Zona de Manejo</mat-label>
+      <mat-select [formControl]="zonaManejoFilter">
+        <mat-option value="">Todas</mat-option>
+        <mat-option value="pdet">PDET</mat-option>
+        <mat-option value="zrc">ZRC</mat-option>
+        <mat-option value="zvc">Zona Veredales de Concentración</mat-option>
+        <mat-option value="na">N/A</mat-option>
+        <mat-option value="otro">Otro</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>2.3 - Resolución de Adjudicación</mat-label>
+      <mat-select [formControl]="documentoPropiedadFilter">
+        <mat-option value="">Todas</mat-option>
+        <mat-option value="registrada">Resolución de adjudicación registrada</mat-option>
+        <mat-option value="sin registrar">Resolución de adjudicación sin registrar</mat-option>
+        <mat-option value="otro">Otro</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>2.6 - Actividad Diferente</mat-label>
+      <mat-select [formControl]="actividadDiferenteFilter">
+        <mat-option value="">Todas</mat-option>
+        <mat-option value="si">Si</mat-option>
+        <mat-option value="no">No</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>2.9 - Grupo Etario</mat-label>
+      <mat-select [formControl]="grupoEtarioFilter">
+        <mat-option value="">Todos</mat-option>
+        <mat-option value="primera infacia">Primera Infacia</mat-option>
+        <mat-option value="infancia">Infancia</mat-option>
+        <mat-option value="preadolescentes">Preadolescentes</mat-option>
+        <mat-option value="adolescentes">Adolescentes</mat-option>
+        <mat-option value="adultos">Adultos</mat-option>
+        <mat-option value="adultos mayores">Adultos Mayores</mat-option>
+        <mat-option value="todas anteriores">Todas las Anteriores</mat-option>
+        <mat-option value="ninguna">Ninguna</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>2.10 - Abandono</mat-label>
+      <mat-select [formControl]="estadoAbandonoFilter">
+        <mat-option value="">Todas</mat-option>
+        <mat-option value="si">Si</mat-option>
+        <mat-option value="no">No</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>3.1 - Infraestructura Instalada</mat-label>
+      <mat-select [formControl]="infraestructuraInstaladaFilter">
+        <mat-option value="">Todas</mat-option>
+        <mat-option value="si">Si</mat-option>
+        <mat-option value="no">No</mat-option>
+        <mat-option value="na">N/A</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>3.2 - Estado Infraestructura</mat-label>
+      <mat-select [formControl]="estadoInfraestructuraFilter">
+        <mat-option value="">Todas</mat-option>
+        <mat-option value="exelente">Exelente</mat-option>
+        <mat-option value="muy bueno">Muy Bueno</mat-option>
+        <mat-option value="bueno">Bueno</mat-option>
+        <mat-option value="regular">Regular</mat-option>
+        <mat-option value="malo">Malo</mat-option>
+        <mat-option value="pesimo">Pésimo</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>3.3 - Exisistia Infraestructura</mat-label>
+      <mat-select [formControl]="tipoInfraestructuraFilter">
+        <mat-option value="">Todas</mat-option>
+        <mat-option value="si">Si</mat-option>
+        <mat-option value="no">No</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>3.4 - Inversion Infraestructura</mat-label>
+      <mat-select [formControl]="inversionInfraestructuraFilter">
+        <mat-option value="">Todas</mat-option>
+        <mat-option value="si">Si</mat-option>
+        <mat-option value="no">No</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>3.5 - Energia Electrica</mat-label>
+      <mat-select [formControl]="energiaElectricaFilter">
+        <mat-option value="">Todas</mat-option>
+        <mat-option value="si">Si</mat-option>
+        <mat-option value="no">No</mat-option>
+        <mat-option value="na">N/A</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>3.6 - Abasteciomiento Agua</mat-label>
+      <mat-select [formControl]="abasteciomientoAguaFilter">
+        <mat-option value="">Todas</mat-option>
+        <mat-option value="si">Si</mat-option>
+        <mat-option value="no">No</mat-option>
+        <mat-option value="na">N/A</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>4.5 - institucion</mat-label>
+      <mat-select [formControl]="institucionFilter">
+        <mat-option value="">Todas</mat-option>
+        <mat-option value="jac">JAC</mat-option>
+        <mat-option value="institucion educativa">Institución Educativa</mat-option>
+        <mat-option value="comunidad territorio">Comunidad</mat-option>
+        <mat-option value="otro">Otro</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>4.7 - Actividad Adjudicada</mat-label>
+      <mat-select [formControl]="actividadAdjudicadaFilter">
+        <mat-option value="">Todas</mat-option>
+        <mat-option value="deacuerdo">Completamente acorde al objetivo de adjudicación</mat-option>
+        <mat-option value="parcialmente">Parcialmente acorde al objetivo</mat-option>
+        <mat-option value="incompatible">Incompatible con la adjudicación</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>4.8 - Estado Actual</mat-label>
+      <mat-select [formControl]="estadoActualFilter">
+        <mat-option value="">Todos</mat-option>
+        <mat-option value="exelente">Exelente</mat-option>
+        <mat-option value="muy bueno">Muy Bueno</mat-option>
+        <mat-option value="bueno">Bueno</mat-option>
+        <mat-option value="regular">Regular</mat-option>
+        <mat-option value="malo">Malo</mat-option>
+        <mat-option value="pesimo">Pésimo</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>4.9 - Calidad Servicio Prestado</mat-label>
+      <mat-select [formControl]="calidadServicioPrestadoFilter">
+        <mat-option value="">Todos</mat-option>
+        <mat-option value="exelente">Exelente</mat-option>
+        <mat-option value="muy bueno">Muy Bueno</mat-option>
+        <mat-option value="bueno">Bueno</mat-option>
+        <mat-option value="regular">Regular</mat-option>
+        <mat-option value="malo">Malo</mat-option>
+        <mat-option value="pesimo">Pésimo</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>4.10 - Inversion Actividades</mat-label>
+      <mat-select [formControl]="inversionActividadesFilter">
+        <mat-option value="">Todas</mat-option>
+        <mat-option value="si">Si</mat-option>
+        <mat-option value="no">No</mat-option>
+      </mat-select>
+    </mat-form-field>
 </div>
 <div class="botones-exportar">
   <button class="exportar-boton" mat-raised-button (click)="exporter.exportTable('xlsx', {fileName:'Reporte', sheet: 'sheet_name', Props: {Author: 'ANT-Reportes'}})">Exportar a Excel</button>
   <button class="exportar-boton" mat-raised-button (click)="exporter.exportTable('csv', {fileName:'Reporte', sheet: 'sheet_name', Props: {Author: 'ANT-Reportes'}})">Exportar a CSV</button>
+  <button class="exportar-boton" mat-raised-button>Generar Graficos</button>
   <!-- <button mat-raised-button (click)="exporter.exportTable('json', {fileName:'Reporte', sheet: 'sheet_name', Props: {Author: 'ANT-Reportes'}})">Json</button>
   <button mat-raised-button (click)="exporter.exportTable('txt', {fileName:'Reporte', sheet: 'sheet_name', Props: {Author: 'ANT-Reportes'}})">Txt</button> -->
 </div>
