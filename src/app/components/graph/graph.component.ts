@@ -36,15 +36,20 @@ export class GraphComponent implements OnInit {
   ocurrencies :any = {};
 
   constructor(
-    private location: Location
+    private location: Location,
+    private router: Router
   ) {
    }
 
   ngOnInit() {
     this.state = this.location.getState();
-    this.data = this.state.data;
-    this.displayedColumns = this.state.displayedColumns;
-    this.setOcurrencies();
+    if (this.state.data) {
+      this.data = this.state.data;
+      this.displayedColumns = this.state.displayedColumns;
+      this.setOcurrencies();
+    } else {      
+      this.router.navigate(['/index']);
+    }
   }
 
   setOcurrencies() {
