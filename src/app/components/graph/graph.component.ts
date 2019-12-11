@@ -3,6 +3,7 @@ import { ActivatedRoute, Router, NavigationStart } from '@angular/router';
 import { map, filter } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { Location } from '@angular/common';
+import * as CanvasJS from './canvasjs.min';
 
 @Component({
   selector: 'app-graph',
@@ -45,6 +46,26 @@ export class GraphComponent implements OnInit {
     this.data = this.state.data;
     this.displayedColumns = this.state.displayedColumns;
     this.setOcurrencies();
+    let chart = new CanvasJS.Chart("chartContainer", {
+      animationEnabled: true,
+      exportEnabled: true,
+      title: {
+        text: "tipoTerritorio".replace(/([A-Z])/g, ' $1')
+        // uppercase the first character
+        .replace(/^./, function(str){ return str.toUpperCase(); })
+      },
+      data: [{
+        type: "column",
+        dataPoints: [
+          { y: this.ocurrencies['tipoTerritorio']['vereda'], label: "Vereda" },
+          { y: this.ocurrencies['tipoTerritorio']['corregimiento'], label: "Corregimiento" },
+          { y: this.ocurrencies['tipoTerritorio']['cabecera municipal'], label: "Cabecera Municipal" },
+          { y: this.ocurrencies['tipoTerritorio']['na'], label: "N/A" },
+          { y: this.ocurrencies['tipoTerritorio']['otro'], label: "Otro" },
+        ]
+      }]
+    });
+    chart.render();
   }
 
   setOcurrencies() {
