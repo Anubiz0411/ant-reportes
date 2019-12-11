@@ -41,6 +41,7 @@ import { LoginComponent } from './components/login/login.component';
 import { IndexComponent } from './components/index/index.component';
 import { ShowComponent } from './components/show/show.component';
 import { MatTableExporterModule } from 'mat-table-exporter';
+import { GraphComponent } from './components/graph/graph.component';
 
  
 @NgModule({
@@ -49,6 +50,7 @@ import { MatTableExporterModule } from 'mat-table-exporter';
     LoginComponent,
     IndexComponent,
     ShowComponent,
+    GraphComponent,
   ],
   imports: [
     BrowserModule,

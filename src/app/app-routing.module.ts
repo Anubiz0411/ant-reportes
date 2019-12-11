@@ -4,6 +4,7 @@ import { AngularFireAuthGuard, redirectLoggedInTo, redirectUnauthorizedTo } from
 import { IndexComponent } from './components/index/index.component';
 import { LoginComponent } from './components/login/login.component';
 import { ShowComponent } from './components/show/show.component';
+import { GraphComponent } from './components/graph/graph.component';
 
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
 const redirectLoggedInToIndex = () => redirectLoggedInTo(['index']);
@@ -29,6 +30,12 @@ const routes: Routes = [
   {
     path: 'show/:edp',
     component: ShowComponent,
+    canActivate: [AngularFireAuthGuard],
+    data: {authGuardPipe: redirectUnauthorizedToLogin}
+  },
+  {
+    path: 'graph',
+    component: GraphComponent,
     canActivate: [AngularFireAuthGuard],
     data: {authGuardPipe: redirectUnauthorizedToLogin}
   }
