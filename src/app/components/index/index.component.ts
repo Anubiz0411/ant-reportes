@@ -4,6 +4,7 @@ import { MatSort } from '@angular/material';
 import { MatTableDataSource } from '@angular/material/table';
 import { FormControl } from '@angular/forms';
 import { SelectionModel } from '@angular/cdk/collections';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -62,7 +63,10 @@ export class IndexComponent implements OnInit, AfterViewInit {
 
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
-  constructor(private dataService: DatabaseService) { 
+  constructor(
+    private dataService: DatabaseService,
+    private router: Router
+    ) { 
     this.dataSource.filterPredicate = this.tableFilter();
   }
 
@@ -252,6 +256,10 @@ export class IndexComponent implements OnInit, AfterViewInit {
      ;
     }
     return filterFunction;
-  } 
+  }
+  
+  generateGraphs() {    
+    this.router.navigateByUrl('/graph', {state: {displayedColumns: this.displayedColumns, data: this.dataSource.data} });
+  }
 
 }

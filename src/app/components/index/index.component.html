@@ -182,7 +182,7 @@
 <div class="botones-exportar">
   <button class="exportar-boton" mat-raised-button (click)="exporter.exportTable('xlsx', {fileName:'Reporte', sheet: 'sheet_name', Props: {Author: 'ANT-Reportes'}})">Exportar a Excel</button>
   <button class="exportar-boton" mat-raised-button (click)="exporter.exportTable('csv', {fileName:'Reporte', sheet: 'sheet_name', Props: {Author: 'ANT-Reportes'}})">Exportar a CSV</button>
-  <button class="exportar-boton" mat-raised-button>Generar Graficos</button>
+  <button class="exportar-boton" mat-raised-button (click)="generateGraphs()">Generar Graficos</button>
   <!-- <button mat-raised-button (click)="exporter.exportTable('json', {fileName:'Reporte', sheet: 'sheet_name', Props: {Author: 'ANT-Reportes'}})">Json</button>
   <button mat-raised-button (click)="exporter.exportTable('txt', {fileName:'Reporte', sheet: 'sheet_name', Props: {Author: 'ANT-Reportes'}})">Txt</button> -->
 </div>
