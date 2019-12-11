@@ -37,35 +37,56 @@ export class GraphComponent implements OnInit {
   ocurrencies :any = {};
 
   constructor(
-    private location: Location
+    private location: Location,
+    private router: Router
   ) {
    }
 
   ngOnInit() {
     this.state = this.location.getState();
-    this.data = this.state.data;
-    this.displayedColumns = this.state.displayedColumns;
-    this.setOcurrencies();
-    let chart = new CanvasJS.Chart("chartContainer", {
-      animationEnabled: true,
-      exportEnabled: true,
-      title: {
-        text: "tipoTerritorio".replace(/([A-Z])/g, ' $1')
-        // uppercase the first character
-        .replace(/^./, function(str){ return str.toUpperCase(); })
-      },
-      data: [{
-        type: "column",
-        dataPoints: [
-          { y: this.ocurrencies['tipoTerritorio']['vereda'], label: "Vereda" },
-          { y: this.ocurrencies['tipoTerritorio']['corregimiento'], label: "Corregimiento" },
-          { y: this.ocurrencies['tipoTerritorio']['cabecera municipal'], label: "Cabecera Municipal" },
-          { y: this.ocurrencies['tipoTerritorio']['na'], label: "N/A" },
-          { y: this.ocurrencies['tipoTerritorio']['otro'], label: "Otro" },
-        ]
-      }]
-    });
-    chart.render();
+    if(!this.state.data){
+      this.router.navigate(['/index']);
+    } else{
+      this.data = this.state.data;
+      this.displayedColumns = this.state.displayedColumns;
+      this.setOcurrencies();
+      let chart = new CanvasJS.Chart("tipoTerritorio", {
+        animationEnabled: true,
+        exportEnabled: true,
+        title: {
+          text: "1.3 - Tipo de Territorio"
+        },
+        data: [{
+          type: "column",
+          dataPoints: [
+            { y: this.ocurrencies['tipoTerritorio']['vereda'], label: "Vereda" },
+            { y: this.ocurrencies['tipoTerritorio']['corregimiento'], label: "Corregimiento" },
+            { y: this.ocurrencies['tipoTerritorio']['cabecera municipal'], label: "Cabecera Municipal" },
+            { y: this.ocurrencies['tipoTerritorio']['na'], label: "N/A" },
+            { y: this.ocurrencies['tipoTerritorio']['otro'], label: "Otro" },
+          ]
+        }]
+      });
+      chart.render();
+      chart = new CanvasJS.Chart("zonaManejo", {
+        animationEnabled: true,
+        exportEnabled: true,
+        title: {
+          text: "1.4 - Zona de Manejo"
+        },
+        data: [{
+          type: "column",
+          dataPoints: [
+            { y: this.ocurrencies['zonaManejo']['pdet'], label: "PDET" },
+            { y: this.ocurrencies['zonaManejo']['zrc'], label: "ZRC" },
+            { y: this.ocurrencies['zonaManejo']['zvc'], label: "Zona Veredales de Concentración" },
+            { y: this.ocurrencies['zonaManejo']['na'], label: "N/A" },
+            { y: this.ocurrencies['zonaManejo']['otro'], label: "Otro" },
+          ]
+        }]
+      });
+      chart.render();
+    }
   }
 
   setOcurrencies() {
