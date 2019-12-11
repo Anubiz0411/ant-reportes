@@ -19,3 +19,7 @@ body {
 .mat-expansion-indicator::after {
     color: #F4AE2F !important;
 }
+
+.mat-form-field-infix{
+    width: 636px !important;
+}

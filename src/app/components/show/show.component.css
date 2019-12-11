@@ -13,3 +13,10 @@ mat-card-subtitle{
 mat-form-field{
     margin-left: 5px;
 }
+
+.imprimir-fomulario{
+    background-color: #F4AE2F;
+    color: white;
+    position: absolute;
+    right: 20%;
+}
