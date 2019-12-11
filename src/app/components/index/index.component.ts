@@ -259,7 +259,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
   }
   
   generateGraphs() {    
-    this.router.navigateByUrl('/graph', {state: {data: this.dataSource.data} });
+    this.router.navigateByUrl('/graph', {state: {displayedColumns: this.displayedColumns, data: this.dataSource.data} });
   }
 
 }
