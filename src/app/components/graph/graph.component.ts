@@ -59,11 +59,11 @@ export class GraphComponent implements OnInit {
         data: [{
           type: "column",
           dataPoints: [
-            { y: this.ocurrencies['tipoTerritorio']['vereda'], label: "Vereda" },
-            { y: this.ocurrencies['tipoTerritorio']['corregimiento'], label: "Corregimiento" },
-            { y: this.ocurrencies['tipoTerritorio']['cabecera municipal'], label: "Cabecera Municipal" },
-            { y: this.ocurrencies['tipoTerritorio']['na'], label: "N/A" },
-            { y: this.ocurrencies['tipoTerritorio']['otro'], label: "Otro" },
+            { y: this.ocurrencies['tipoTerritorio']['vereda'],              label: "Vereda: ".concat(this.ocurrencies['tipoTerritorio']['vereda']) },
+            { y: this.ocurrencies['tipoTerritorio']['corregimiento'],       label: "Corregimiento: ".concat(this.ocurrencies['tipoTerritorio']['corregimiento']) },
+            { y: this.ocurrencies['tipoTerritorio']['cabecera municipal'],  label: "Cabecera Municipal: ".concat(this.ocurrencies['tipoTerritorio']['cabecera municipal']) },
+            { y: this.ocurrencies['tipoTerritorio']['na'],                  label: "N/A: ".concat(this.ocurrencies['tipoTerritorio']['na']) },
+            { y: this.ocurrencies['tipoTerritorio']['otro'],                label: "Otro: ".concat(this.ocurrencies['tipoTerritorio']['otro']) },
           ]
         }]
       });
@@ -77,11 +77,11 @@ export class GraphComponent implements OnInit {
         data: [{
           type: "column",
           dataPoints: [
-            { y: this.ocurrencies['zonaManejo']['pdet'], label: "PDET" },
-            { y: this.ocurrencies['zonaManejo']['zrc'], label: "ZRC" },
-            { y: this.ocurrencies['zonaManejo']['zvc'], label: "Zona Veredales de Concentración" },
-            { y: this.ocurrencies['zonaManejo']['na'], label: "N/A" },
-            { y: this.ocurrencies['zonaManejo']['otro'], label: "Otro" },
+            { y: this.ocurrencies['zonaManejo']['pdet'],  label: "PDET: ".concat(this.ocurrencies['zonaManejo']['pdet']) },
+            { y: this.ocurrencies['zonaManejo']['zrc'],   label: "ZRC: ".concat(this.ocurrencies['zonaManejo']['zrc']) },
+            { y: this.ocurrencies['zonaManejo']['zvc'],   label: "Zona Veredales de Concentración: ".concat(this.ocurrencies['zonaManejo']['zvc']) },
+            { y: this.ocurrencies['zonaManejo']['na'],    label: "N/A: ".concat(this.ocurrencies['zonaManejo']['na']) },
+            { y: this.ocurrencies['zonaManejo']['otro'],  label: "Otro: ".concat(this.ocurrencies['zonaManejo']['otro']) },
           ]
         }]
       });
@@ -95,9 +95,9 @@ export class GraphComponent implements OnInit {
         data: [{
           type: "column",
           dataPoints: [
-            { y: this.ocurrencies['documentoPropiedad']['registrada'], label: "Resolución de adjudicación registrada" },
-            { y: this.ocurrencies['documentoPropiedad']['sin registrar'], label: "Resolución de adjudicación sin registrar" },
-            { y: this.ocurrencies['documentoPropiedad']['otro'], label: "Otro" },
+            { y: this.ocurrencies['documentoPropiedad']['registrada'],    label: "Resolución de adjudicación registrada: ".concat(this.ocurrencies['documentoPropiedad']['registrada']) },
+            { y: this.ocurrencies['documentoPropiedad']['sin registrar'], label: "Resolución de adjudicación sin registrar: ".concat(this.ocurrencies['documentoPropiedad']['sin registrar']) },
+            { y: this.ocurrencies['documentoPropiedad']['otro'],          label: "Otro: ".concat(this.ocurrencies['documentoPropiedad']['otro']) },
           ]
         }]
       });
@@ -111,8 +111,8 @@ export class GraphComponent implements OnInit {
         data: [{
           type: "column",
           dataPoints: [
-            { y: this.ocurrencies['actividadDiferente']['si'], label: "Si" },
-            { y: this.ocurrencies['actividadDiferente']['no'], label: "No" },
+            { y: this.ocurrencies['actividadDiferente']['si'], label: "Si: ".concat(this.ocurrencies['actividadDiferente']['si']) },
+            { y: this.ocurrencies['actividadDiferente']['no'], label: "No: ".concat(this.ocurrencies['actividadDiferente']['no']) },
           ]
         }]
       });
@@ -126,14 +126,14 @@ export class GraphComponent implements OnInit {
         data: [{
           type: "column",
           dataPoints: [
-            { y: this.ocurrencies['grupoEtario']['primera infacia'], label: "Primera Infacia" },
-            { y: this.ocurrencies['grupoEtario']['infancia'], label: "Infancia" },
-            { y: this.ocurrencies['grupoEtario']['preadolescentes'], label: "Preadolescentes" },
-            { y: this.ocurrencies['grupoEtario']['adolescentes'], label: "Adolescentes" },
-            { y: this.ocurrencies['grupoEtario']['adultos'], label: "adultos" },
-            { y: this.ocurrencies['grupoEtario']['adultos mayores'], label: "Adultos Mayores" },
-            { y: this.ocurrencies['grupoEtario']['todas anteriores'], label: "todas anteriores" },
-            { y: this.ocurrencies['grupoEtario']['ninguna'], label: "Ninguna" },
+            { y: this.ocurrencies['grupoEtario']['primera infacia'],  label: "Primera Infacia: ".concat(this.ocurrencies['grupoEtario']['primera infacia']) },
+            { y: this.ocurrencies['grupoEtario']['infancia'],         label: "Infancia: ".concat(this.ocurrencies['grupoEtario']['infancia']) },
+            { y: this.ocurrencies['grupoEtario']['preadolescentes'],  label: "Preadolescentes: ".concat(this.ocurrencies['grupoEtario']['preadolescentes']) },
+            { y: this.ocurrencies['grupoEtario']['adolescentes'],     label: "Adolescentes: ".concat(this.ocurrencies['grupoEtario']['adolescentes']) },
+            { y: this.ocurrencies['grupoEtario']['adultos'],          label: "adultos: ".concat(this.ocurrencies['grupoEtario']['adultos']) },
+            { y: this.ocurrencies['grupoEtario']['adultos mayores'],  label: "Adultos Mayores: ".concat(this.ocurrencies['grupoEtario']['adultos mayores']) },
+            { y: this.ocurrencies['grupoEtario']['todas anteriores'], label: "todas anteriores: ".concat(this.ocurrencies['grupoEtario']['todas anteriores']) },
+            { y: this.ocurrencies['grupoEtario']['ninguna'],          label: "Ninguna: ".concat(this.ocurrencies['grupoEtario']['ninguna']) },
           ]
         }]
       });
@@ -147,8 +147,8 @@ export class GraphComponent implements OnInit {
         data: [{
           type: "column",
           dataPoints: [
-            { y: this.ocurrencies['estadoAbandono']['si'], label: "Si" },
-            { y: this.ocurrencies['estadoAbandono']['no'], label: "No" },
+            { y: this.ocurrencies['estadoAbandono']['si'], label: "Si: ".concat(this.ocurrencies['estadoAbandono']['si']) },
+            { y: this.ocurrencies['estadoAbandono']['no'], label: "No: ".concat(this.ocurrencies['estadoAbandono']['no']) },
           ]
         }]
       });
@@ -162,9 +162,9 @@ export class GraphComponent implements OnInit {
         data: [{
           type: "column",
           dataPoints: [
-            { y: this.ocurrencies['infraestructuraInstalada']['si'], label: "Si" },
-            { y: this.ocurrencies['infraestructuraInstalada']['no'], label: "No" },
-            { y: this.ocurrencies['infraestructuraInstalada']['na'], label: "N/A" },
+            { y: this.ocurrencies['infraestructuraInstalada']['si'], label: "Si: ".concat(this.ocurrencies['infraestructuraInstalada']['si']) },
+            { y: this.ocurrencies['infraestructuraInstalada']['no'], label: "No: ".concat(this.ocurrencies['infraestructuraInstalada']['no']) },
+            { y: this.ocurrencies['infraestructuraInstalada']['na'], label: "N/A: ".concat(this.ocurrencies['infraestructuraInstalada']['na']) },
           ]
         }]
       });
@@ -178,12 +178,12 @@ export class GraphComponent implements OnInit {
         data: [{
           type: "column",
           dataPoints: [
-            { y: this.ocurrencies['estadoInfraestructura']['exelente'], label: "Exelente" },
-            { y: this.ocurrencies['estadoInfraestructura']['muy bueno'], label: "Muy Bueno" },
-            { y: this.ocurrencies['estadoInfraestructura']['bueno'], label: "Bueno" },
-            { y: this.ocurrencies['estadoInfraestructura']['regular'], label: "Regular" },
-            { y: this.ocurrencies['estadoInfraestructura']['malo'], label: "Malo" },
-            { y: this.ocurrencies['estadoInfraestructura']['pesimo'], label: "Pésimo" },
+            { y: this.ocurrencies['estadoInfraestructura']['exelente'],   label: "Exelente: ".concat(this.ocurrencies['estadoInfraestructura']['exelente']) },
+            { y: this.ocurrencies['estadoInfraestructura']['muy bueno'],  label: "Muy Bueno: ".concat(this.ocurrencies['estadoInfraestructura']['muy bueno']) },
+            { y: this.ocurrencies['estadoInfraestructura']['bueno'],      label: "Bueno: ".concat(this.ocurrencies['estadoInfraestructura']['bueno']) },
+            { y: this.ocurrencies['estadoInfraestructura']['regular'],    label: "Regular: ".concat(this.ocurrencies['estadoInfraestructura']['regular']) },
+            { y: this.ocurrencies['estadoInfraestructura']['malo'],       label: "Malo: ".concat(this.ocurrencies['estadoInfraestructura']['malo']) },
+            { y: this.ocurrencies['estadoInfraestructura']['pesimo'],     label: "Pésimo: ".concat(this.ocurrencies['estadoInfraestructura']['pesimo']) },
           ]
         }]
       });
@@ -197,8 +197,8 @@ export class GraphComponent implements OnInit {
         data: [{
           type: "column",
           dataPoints: [
-            { y: this.ocurrencies['tipoInfraestructura']['si'], label: "Si" },
-            { y: this.ocurrencies['tipoInfraestructura']['no'], label: "No" },
+            { y: this.ocurrencies['tipoInfraestructura']['si'], label: "Si: ".concat(this.ocurrencies['tipoInfraestructura']['si']) },
+            { y: this.ocurrencies['tipoInfraestructura']['no'], label: "No: ".concat(this.ocurrencies['tipoInfraestructura']['no']) },
           ]
         }]
       });
@@ -212,8 +212,8 @@ export class GraphComponent implements OnInit {
         data: [{
           type: "column",
           dataPoints: [
-            { y: this.ocurrencies['inversionInfraestructura']['si'], label: "Si" },
-            { y: this.ocurrencies['inversionInfraestructura']['no'], label: "No" },
+            { y: this.ocurrencies['inversionInfraestructura']['si'], label: "Si: ".concat(this.ocurrencies['inversionInfraestructura']['si']) },
+            { y: this.ocurrencies['inversionInfraestructura']['no'], label: "No: ".concat(this.ocurrencies['inversionInfraestructura']['no']) },
           ]
         }]
       });
@@ -227,9 +227,9 @@ export class GraphComponent implements OnInit {
         data: [{
           type: "column",
           dataPoints: [
-            { y: this.ocurrencies['energiaElectrica']['si'], label: "Si" },
-            { y: this.ocurrencies['energiaElectrica']['no'], label: "No" },
-            { y: this.ocurrencies['energiaElectrica']['na'], label: "N/A" },
+            { y: this.ocurrencies['energiaElectrica']['si'], label: "Si: ".concat(this.ocurrencies['energiaElectrica']['si']) },
+            { y: this.ocurrencies['energiaElectrica']['no'], label: "No: ".concat(this.ocurrencies['energiaElectrica']['no']) },
+            { y: this.ocurrencies['energiaElectrica']['na'], label: "N/A: ".concat(this.ocurrencies['energiaElectrica']['na']) },
 
           ]
         }]
@@ -244,9 +244,9 @@ export class GraphComponent implements OnInit {
         data: [{
           type: "column",
           dataPoints: [
-            { y: this.ocurrencies['abasteciomientoAgua']['si'], label: "Si" },
-            { y: this.ocurrencies['abasteciomientoAgua']['no'], label: "No" },
-            { y: this.ocurrencies['abasteciomientoAgua']['na'], label: "N/A" },
+            { y: this.ocurrencies['abasteciomientoAgua']['si'], label: "Si: ".concat(this.ocurrencies['abasteciomientoAgua']['si']) },
+            { y: this.ocurrencies['abasteciomientoAgua']['no'], label: "No: ".concat(this.ocurrencies['abasteciomientoAgua']['no']) },
+            { y: this.ocurrencies['abasteciomientoAgua']['na'], label: "N/A: ".concat(this.ocurrencies['abasteciomientoAgua']['na']) },
 
           ]
         }]
@@ -261,10 +261,10 @@ export class GraphComponent implements OnInit {
         data: [{
           type: "column",
           dataPoints: [
-            { y: this.ocurrencies['institucion']['jac'], label: "JAC" },
-            { y: this.ocurrencies['institucion']['institucion educativa'], label: "Institución Educativa" },
-            { y: this.ocurrencies['institucion']['comunidad territorio'], label: "Comunidad Territorio" },
-            { y: this.ocurrencies['institucion']['otro'], label: "otro" },
+            { y: this.ocurrencies['institucion']['jac'],                    label: "JAC: ".concat(this.ocurrencies['institucion']['jac']) },
+            { y: this.ocurrencies['institucion']['institucion educativa'],  label: "Institución Educativa: ".concat(this.ocurrencies['institucion']['institucion educativa']) },
+            { y: this.ocurrencies['institucion']['comunidad territorio'],   label: "Comunidad Territorio: ".concat(this.ocurrencies['institucion']['comunidad territorio']) },
+            { y: this.ocurrencies['institucion']['otro'],                   label: "otro: ".concat(this.ocurrencies['institucion']['otro']) },
           ]
         }]
       });
@@ -278,9 +278,9 @@ export class GraphComponent implements OnInit {
         data: [{
           type: "column",
           dataPoints: [
-            { y: this.ocurrencies['actividadAdjudicada']['deacuerdo'], label: "Completamente acorde al objetivo de adjudicación" },
-            { y: this.ocurrencies['actividadAdjudicada']['parcialmente'], label: "Parcialmente acorde al objetivo" },
-            { y: this.ocurrencies['actividadAdjudicada']['incompatible'], label: "Incompatible con la adjudicación" },
+            { y: this.ocurrencies['actividadAdjudicada']['deacuerdo'],    label: "Completamente acorde al objetivo de adjudicación: ".concat(this.ocurrencies['actividadAdjudicada']['deacuerdo']) },
+            { y: this.ocurrencies['actividadAdjudicada']['parcialmente'], label: "Parcialmente acorde al objetivo: ".concat(this.ocurrencies['actividadAdjudicada']['parcialmente']) },
+            { y: this.ocurrencies['actividadAdjudicada']['incompatible'], label: "Incompatible con la adjudicación: ".concat(this.ocurrencies['actividadAdjudicada']['incompatible']) },
           ]
         }]
       });
@@ -294,12 +294,12 @@ export class GraphComponent implements OnInit {
         data: [{
           type: "column",
           dataPoints: [
-            { y: this.ocurrencies['estadoActual']['exelente'], label: "Exelente" },
-            { y: this.ocurrencies['estadoActual']['muy bueno'], label: "Muy Bueno" },
-            { y: this.ocurrencies['estadoActual']['bueno'], label: "Bueno" },
-            { y: this.ocurrencies['estadoActual']['regular'], label: "Regular" },
-            { y: this.ocurrencies['estadoActual']['malo'], label: "Malo" },
-            { y: this.ocurrencies['estadoActual']['pesimo'], label: "Pésimo" },
+            { y: this.ocurrencies['estadoActual']['exelente'],  label: "Exelente: ".concat(this.ocurrencies['estadoActual']['exelente']) },
+            { y: this.ocurrencies['estadoActual']['muy bueno'], label: "Muy Bueno: ".concat(this.ocurrencies['estadoActual']['muy bueno']) },
+            { y: this.ocurrencies['estadoActual']['bueno'],     label: "Bueno: ".concat(this.ocurrencies['estadoActual']['bueno']) },
+            { y: this.ocurrencies['estadoActual']['regular'],   label: "Regular: ".concat(this.ocurrencies['estadoActual']['regular']) },
+            { y: this.ocurrencies['estadoActual']['malo'],      label: "Malo: ".concat(this.ocurrencies['estadoActual']['malo']) },
+            { y: this.ocurrencies['estadoActual']['pesimo'],    label: "Pésimo: ".concat(this.ocurrencies['estadoActual']['pesimo']) },
           ]
         }]
       });
@@ -313,12 +313,12 @@ export class GraphComponent implements OnInit {
         data: [{
           type: "column",
           dataPoints: [
-            { y: this.ocurrencies['calidadServicioPrestado']['exelente'], label: "Exelente" },
-            { y: this.ocurrencies['calidadServicioPrestado']['muy bueno'], label: "Muy Bueno" },
-            { y: this.ocurrencies['calidadServicioPrestado']['bueno'], label: "Bueno" },
-            { y: this.ocurrencies['calidadServicioPrestado']['regular'], label: "Regular" },
-            { y: this.ocurrencies['calidadServicioPrestado']['malo'], label: "Malo" },
-            { y: this.ocurrencies['calidadServicioPrestado']['pesimo'], label: "Pésimo" },
+            { y: this.ocurrencies['calidadServicioPrestado']['exelente'],   label: "Exelente: ".concat(this.ocurrencies['calidadServicioPrestado']['exelente']) },
+            { y: this.ocurrencies['calidadServicioPrestado']['muy bueno'],  label: "Muy Bueno: ".concat(this.ocurrencies['calidadServicioPrestado']['muy bueno']) },
+            { y: this.ocurrencies['calidadServicioPrestado']['bueno'],      label: "Bueno: ".concat(this.ocurrencies['calidadServicioPrestado']['bueno']) },
+            { y: this.ocurrencies['calidadServicioPrestado']['regular'],    label: "Regular: ".concat(this.ocurrencies['calidadServicioPrestado']['regular']) },
+            { y: this.ocurrencies['calidadServicioPrestado']['malo'],       label: "Malo: ".concat(this.ocurrencies['calidadServicioPrestado']['malo']) },
+            { y: this.ocurrencies['calidadServicioPrestado']['pesimo'],     label: "Pésimo: ".concat(this.ocurrencies['calidadServicioPrestado']['pesimo']) },
           ]
         }]
       });
@@ -332,9 +332,9 @@ export class GraphComponent implements OnInit {
         data: [{
           type: "column",
           dataPoints: [
-            { y: this.ocurrencies['inversionActividades']['si'], label: "Si" },
-            { y: this.ocurrencies['inversionActividades']['no'], label: "No" },
-            { y: this.ocurrencies['inversionActividades']['na'], label: "N/A" },
+            { y: this.ocurrencies['inversionActividades']['si'], label: "Si: ".concat(this.ocurrencies['inversionActividades']['si']) },
+            { y: this.ocurrencies['inversionActividades']['no'], label: "No: ".concat(this.ocurrencies['inversionActividades']['no']) },
+            { y: this.ocurrencies['inversionActividades']['na'], label: "N/A: ".concat(this.ocurrencies['inversionActividades']['na']) },
           ]
         }]
       });

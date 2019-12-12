@@ -1,4 +1,16 @@
-.container{
-    margin-left: 10px;
-    margin-right: 10px;
+.graficos {
+    height: 370px;
+    width: 46%;
+    float: left;
+    margin-top: 30px;
+    margin: 15px;
+}
+
+.canvasjs-chart-credit {
+    display: none;
+}
+
+.imprimir {
+    background-color: #F4AE2F;
+    color: white;
 }

@@ -1,6 +1,6 @@
-<div class="container">
+<div class="formularios">
     <mat-card>
-        <mat-card-title>{{ (item | async)?.solicitudEDP }} <button class="imprimir-fomulario" mat-raised-button onClick="window.print();">Imprimir</button></mat-card-title>
+        <mat-card-title>{{ (item | async)?.solicitudEDP }} <button class="imprimir-fomulario no-print" mat-raised-button onClick="window.print();">Imprimir</button></mat-card-title>
         <mat-card-subtitle>Creado por: {{ (item | async)?.user }}; Ultima modificación: {{ (item | async)?.formularioModificadoEl.seconds * 1000 | date:'yyyy-MM-dd hh:mm:ss' }}</mat-card-subtitle>
         <mat-card-content>
             <mat-accordion [multi]="true" #accordion="matAccordion">
@@ -23,12 +23,12 @@
                         <mat-label>1.2 - Municipio</mat-label>
                         <input matInput value="{{ (item | async)?.capituloUno.municipio }}" readonly>
                     </mat-form-field>
-
+    
                     <mat-form-field>
                         <mat-label>1.3 - Tipo de Territorio</mat-label>
                         <input matInput value="{{ (item | async)?.capituloUno.tipoTerritorio }}" readonly>
                     </mat-form-field>
-
+    
                     <mat-form-field *ngIf="(item | async)?.capituloUno.tipoTerritorio == 'otro'">
                         <mat-label>1.3.1 - Tipo de Territorio Otra</mat-label>
                         <input matInput value="{{ (item | async)?.capituloUno.tipoTerritorioOtroCual }}" readonly>
@@ -38,22 +38,22 @@
                         <mat-label>1.4 - Zona de Manejo</mat-label>
                         <input matInput value="{{ (item | async)?.capituloUno.zonaManejo }}" readonly>
                     </mat-form-field>
-
+    
                     <mat-form-field *ngIf="(item | async)?.capituloUno.zonaManejo == 'otro'">
                         <mat-label>1.4.1 - Tipo de Territorio Otra</mat-label>
                         <input matInput value="{{ (item | async)?.capituloUno.zonaManejoOtraCual }}" readonly>
                     </mat-form-field>
-
+    
                     <mat-form-field>
                         <mat-label>1.5 - Nombre de Territorio</mat-label>
                         <input matInput value="{{ (item | async)?.capituloUno.nombreTerritorio }}"readonly>
                     </mat-form-field>
-
+    
                     <mat-form-field>
                         <mat-label>1.6 - Nombre del predio</mat-label>
                         <input matInput value="{{ (item | async)?.capituloUno.nombrePredio }}"readonly>
                     </mat-form-field>
-
+    
                     <mat-form-field>
                         <mat-label>1.7 - Coordenadas del Predio Latitud</mat-label>
                         <input matInput value="{{ (item | async)?.capituloUno.latitudPredio }}"readonly>
@@ -63,16 +63,16 @@
                         <mat-label>1.8 - Mi Localización Longitud</mat-label>
                         <input matInput value="{{ (item | async)?.capituloUno.longitud }}"readonly>
                     </mat-form-field>
-
+    
                     <mat-form-field>
                         <mat-label>1.9 - Observaciones Capitulo 1</mat-label>
                         <textarea matInput value="{{ (item | async)?.capituloUno.observacionesCapituloUno }}"></textarea>
                     </mat-form-field>
-
+    
                 </mat-expansion-panel>
-
+    
                 <br>
-
+    
                 <mat-expansion-panel [expanded]="true">
                     <mat-expansion-panel-header>
                         <mat-panel-title>
@@ -87,7 +87,7 @@
                         <mat-label>2.1 - Área del predio</mat-label>
                         <input matInput value="{{ (item | async)?.capituloDos.areaPredio }}" readonly>
                     </mat-form-field>
-
+    
                     <mat-form-field>
                         <mat-label>2.1.1 - Medidas</mat-label>
                         <input matInput value="{{ (item | async)?.capituloDos.medida }}" readonly>
@@ -97,32 +97,32 @@
                         <mat-label>2.2.1 - Colindantes Norte</mat-label>
                         <input matInput value="{{ (item | async)?.capituloDos.norte }}" readonly>
                     </mat-form-field>
-
+    
                     <mat-form-field>
                         <mat-label>2.2.2 - Colindantes Sur</mat-label>
                         <input matInput value="{{ (item | async)?.capituloDos.sur }}" readonly>
                     </mat-form-field>
-
+    
                     <mat-form-field>
                         <mat-label>2.2.3 - Colindantes Oeste</mat-label>
                         <input matInput value="{{ (item | async)?.capituloDos.oeste }}" readonly>
                     </mat-form-field>
-
+    
                     <mat-form-field>
                         <mat-label>2.2.4 - Colindantes Este</mat-label>
                         <input matInput value="{{ (item | async)?.capituloDos.este }}" readonly>
                     </mat-form-field>
-
+    
                     <mat-form-field>
                         <mat-label>2.3 - ¿Qué documento de propiedad posee del predio?</mat-label>
                         <input matInput value="{{ (item | async)?.capituloDos.documentoPropiedad }}"readonly>
                     </mat-form-field>
-
+    
                     <mat-form-field *ngIf="(item | async)?.capituloDos.documentoPropiedad == 'registrada'">
                         <mat-label>2.3.1 - Numero Ajudicacion Registrada</mat-label>
                         <input matInput value="{{ (item | async)?.capituloDos.numeroAjudicacionRegistrada }}" readonly>
                     </mat-form-field>
-
+    
                     <mat-form-field *ngIf="(item | async)?.capituloDos.documentoPropiedad == 'registrada'">
                         <mat-label>2.3.2 - Fecha Adjudicacion Registrada</mat-label>
                         <input matInput value="{{ (item | async)?.capituloDos.fechaAdjudicacionRegistrada }}" readonly>
@@ -132,7 +132,7 @@
                         <mat-label>2.3.1 - Numero Ajudicacion Sin Registrar</mat-label>
                         <input matInput value="{{ (item | async)?.capituloDos.numeroAjudicacionSinRegistrar }}" readonly>
                     </mat-form-field>
-
+    
                     <mat-form-field *ngIf="(item | async)?.capituloDos.documentoPropiedad == 'sin registrar'">
                         <mat-label>2.3.2 - Fecha Adjudicacion Sin Registrada</mat-label>
                         <input matInput value="{{ (item | async)?.capituloDos.fechaAjudicacionSinRegistrar }}" readonly>
@@ -152,37 +152,37 @@
                         <mat-label>2.4 - Entidad de Derecho Público a la cual fue Adjudicado el predio </mat-label>
                         <input matInput value="{{ (item | async)?.capituloDos.entidadAdjudicada }}" readonly>
                     </mat-form-field>
-
+    
                     <mat-form-field>
                         <mat-label>2.5 - Servicio o Actividad de utilidad pública e interés social para la cual se adjudicó el predio </mat-label>
                         <input matInput value="{{ (item | async)?.capituloDos.servicioActividad }}"readonly>
                     </mat-form-field>
-
+    
                     <mat-form-field>
                         <mat-label>2.5.1 - Fehca incial establecida en el acto administrativo de adjudicación para el cumplimiento de la Actividad a desarrollar </mat-label>
                         <input matInput value="{{ (item | async)?.capituloDos.fechaInicialTiempoEstablecido }}"readonly>
                     </mat-form-field>
-
+    
                     <mat-form-field>
                         <mat-label>2.6 - ¿Dentro del predio adjudicado se desarrolla una activdad diferente a la establecida en el acto administrativo de adjudicación?</mat-label>
                         <input matInput value="{{ (item | async)?.capituloDos.actividadDiferente }}"readonly>
                     </mat-form-field>
-
+    
                     <mat-form-field *ngIf="(item | async)?.capituloDos.actividadDiferente == 'si'">
                         <mat-label>2.6.1 - ¿Cual?</mat-label>
                         <input matInput value="{{ (item | async)?.capituloDos.actividadDiferenteCual }}" readonly>
                     </mat-form-field>
-
+    
                     <mat-form-field *ngIf="(item | async)?.capituloDos.actividadDiferente == 'si'">
                         <mat-label>2.6.2 - ¿Desde que fecha?</mat-label>
                         <input matInput value="{{ (item | async)?.capituloDos.actividadDiferenteTiempo }}" readonly>
                     </mat-form-field>
-
+    
                     <mat-form-field>
                         <mat-label>2.7 - ¿Cuantas personas son  beneficiadas por la actividad desarrollada en el predio?</mat-label>
                         <input matInput value="{{ (item | async)?.capituloDos.personasBeneficiadas }}"readonly>
                     </mat-form-field>
-
+    
                     <mat-form-field>
                         <mat-label>2.8 - ¿Que tipo de población es beneficiaria de la actividad desarrollada en el predio?</mat-label>
                         <input matInput value="{{ (item | async)?.capituloDos.poblacionBeneficiaria }}"readonly>
@@ -192,31 +192,31 @@
                         <mat-label>2.9 - Grupo etario beneficiado por la actividad desarrollada en el predio </mat-label>
                         <input matInput value="{{ (item | async)?.capituloDos.grupoEtario }}"readonly>
                     </mat-form-field>
-
+    
                     <mat-form-field>
                         <mat-label>2.10 - ¿El predio se encuentra en estado de abandono?</mat-label>
                         <input matInput value="{{ (item | async)?.capituloDos.estadoAbandono }}"readonly>
                     </mat-form-field>
-
+    
                     <mat-form-field *ngIf="(item | async)?.capituloDos.estadoAbandono == 'si'">
                         <mat-label>2.10.1 - Razón por la cual el predio se encuentra en estado de abandono</mat-label>
                         <input matInput value="{{ (item | async)?.capituloDos.estadoAbandonoRazon }}"readonly>
                         <input *ngIf="(item | async)?.capituloDos.estadoAbandonoRazon == 'no adjudicacion'" matInput value="No era necesario esa adjudicacion" readonly>
                     </mat-form-field>
-
+    
                     <mat-form-field *ngIf="(item | async)?.capituloDos.estadoAbandono == 'si'">
                         <mat-label>2.10.2 - ¿Quien ocupa o administra el predio?</mat-label>
                         <input matInput value="{{ (item | async)?.capituloDos.ocupacionAdministracion }}" readonly>
                     </mat-form-field>
-
+    
                     <mat-form-field>
                         <mat-label>2.11 - Observaciones Capitulo 2</mat-label>
                         <textarea matInput value="{{ (item | async)?.capituloDos.observacionesCapituloDos }}"></textarea>
                     </mat-form-field>
                 </mat-expansion-panel>
-
+    
                 <br>
-
+    
                 <mat-expansion-panel [expanded]="true">
                     <mat-expansion-panel-header>
                         <mat-panel-title>
@@ -231,12 +231,12 @@
                         <mat-label>3.1 - ¿El predio cuenta con infraestructura instalada?</mat-label>
                         <input matInput value="{{ (item | async)?.capituloTres.infraestructuraInstalada }}" readonly>
                     </mat-form-field>
-
+    
                     <mat-form-field *ngIf="(item | async)?.capituloTres.infraestructuraInstalada == 'si'">
                         <mat-label>3.1.1 - ¿Que tipo de infraestructura instalada tiene el predio?</mat-label>
                         <input matInput value="{{ (item | async)?.capituloTres.tipoInfraestructuraDescripcion }}" readonly>
                     </mat-form-field>
-
+    
                     <mat-form-field *ngIf="(item | async)?.capituloTres.infraestructuraInstalada == 'si'">
                         <mat-label>3.1.2 - ¿Cuenta con baterias sanitarias?</mat-label>
                         <input matInput value="{{ (item | async)?.capituloTres.bateriasSanitarias }}" readonly>
@@ -246,7 +246,7 @@
                         <mat-label>3.2 - Estado general de la infraestructura</mat-label>
                         <input matInput value="{{ (item | async)?.capituloTres.estadoInfraestructura }}" readonly>
                     </mat-form-field>
-
+    
                     <mat-form-field>
                         <mat-label>3.3 - ¿La infraestructura existía antes?</mat-label>
                         <input matInput value="{{ (item | async)?.capituloTres.tipoInfraestructura }}" readonly>
@@ -256,40 +256,40 @@
                         <mat-label>3.4 - ¿Inversiones o mejoras posteriores a la adjudicación?</mat-label>
                         <input matInput value="{{ (item | async)?.capituloTres.inversionInfraestructura }}" readonly>
                     </mat-form-field>
-
+    
                     <mat-form-field *ngIf="(item | async)?.capituloTres.inversionInfraestructura == 'si'">
                         <mat-label>3.4.1 - Cuantificación en pesos de estas mejoras</mat-label>
                         <input matInput value="{{ (item | async)?.capituloTres.inversionInfraestructuraValor }}" readonly>
                     </mat-form-field>
-
+    
                     <mat-form-field>
                         <mat-label>3.5 - ¿El predio cuenta con energía eléctrica?</mat-label>
                         <input matInput value="{{ (item | async)?.capituloTres.energiaElectrica }}"readonly>
                     </mat-form-field>
-
+    
                     <mat-form-field>
                         <mat-label>3.6 - ¿El predio cuenta con abastecimiento de agua?</mat-label>
                         <input matInput value="{{ (item | async)?.capituloTres.abasteciomientoAgua }}"readonly>
                     </mat-form-field>
-
+    
                     <mat-form-field *ngIf="(item | async)?.capituloTres.abasteciomientoAgua == 'si'">
                         <mat-label>3.6.1 - ¿El agua del predio es potable?</mat-label>
                         <input matInput value="{{ (item | async)?.capituloTres.aguaPotable }}" readonly>
                     </mat-form-field>
-
+    
                     <mat-form-field *ngIf="(item | async)?.capituloTres.abasteciomientoAgua == 'si'">
                         <mat-label>3.6.2 - ¿El predio cuenta con tanques de almacenamiento de agua?</mat-label>
                         <input matInput value="{{ (item | async)?.capituloTres.tanquesAlmacenamiento }}" readonly>
                     </mat-form-field>
-
+    
                     <mat-form-field>
                         <mat-label>3.7 - Observaciones Capitulo 3</mat-label>
                         <textarea matInput value="{{ (item | async)?.capituloTres.observacionesCapituloTres }}"></textarea>
                     </mat-form-field>
                 </mat-expansion-panel>
-
+    
                 <br>
-
+    
                 <mat-expansion-panel [expanded]="true">
                     <mat-expansion-panel-header>
                         <mat-panel-title>
@@ -309,12 +309,12 @@
                         <mat-label>4.2 - Documento de Identificación</mat-label>
                         <input matInput value="{{ (item | async)?.capituloCuatro.tipoIdentificacion }}" readonly>
                     </mat-form-field>
-
+    
                     <mat-form-field>
                         <mat-label>4.3 - Numero Identificacion</mat-label>
                         <input matInput value="{{ (item | async)?.capituloCuatro.numeroIdentificacion }}" readonly>
                     </mat-form-field>
-
+    
                     <mat-form-field *ngIf="(item | async)?.capituloCuatro.numeroIdentificacion == 'otro'">
                         <mat-label>4.3.1 - Numero Identificacion Otra</mat-label>
                         <input matInput value="{{ (item | async)?.capituloCuatro.tipoIdentificacionOtroCual }}" readonly>
@@ -324,65 +324,65 @@
                         <mat-label>4.4 - Número Celular</mat-label>
                         <input matInput value="{{ (item | async)?.capituloCuatro.inversionInfraestructura }}" readonly>
                     </mat-form-field>
-
+    
                     <mat-form-field>
                         <mat-label>4.5 - ¿Tiene correo electrónico?</mat-label>
                         <input matInput value="{{ (item | async)?.capituloCuatro.tieneEmail }}"readonly>
                     </mat-form-field>
-
+    
                     <mat-form-field *ngIf="(item | async)?.capituloCuatro.tieneEmail == 'si'">
                         <mat-label>4.5.1 - Correo Electronico</mat-label>
                         <input matInput value="{{ (item | async)?.capituloCuatro.correoElectronico }}" readonly>
                     </mat-form-field>
-
+    
                     <mat-form-field>
                         <mat-label>4.6 - ¿A qué institución pertenece?</mat-label>
                         <input matInput value="{{ (item | async)?.capituloCuatro.institucion }}"readonly>
                     </mat-form-field>
-
+    
                     <mat-form-field *ngIf="(item | async)?.capituloCuatro.numeroIdentificacion == 'otro'">
                         <mat-label>4.6.1 - Institucion Otra</mat-label>
                         <input matInput value="{{ (item | async)?.capituloCuatro.institucionOtroCual }}" readonly>
                     </mat-form-field>
-
+    
                     <mat-form-field>
                         <mat-label>4.7 - ¿Qué cargo tiene dentro de esta institución?</mat-label>
                         <input matInput value="{{ (item | async)?.capituloCuatro.cargoInstitucion }}"readonly>
                     </mat-form-field>
-
+    
                     <mat-form-field>
                         <mat-label>4.8 - En su concepto, la actividad para la cual se adjudicó este predio se está desarrollando actualmente de la siguiente manera</mat-label>
                         <input matInput value="{{ (item | async)?.capituloCuatro.actividadAdjudicada }}"readonly>
                     </mat-form-field>
-
+    
                     <mat-form-field>
                         <mat-label>4.9 - El estado actual de la infraestructura es</mat-label>
                         <input matInput value="{{ (item | async)?.capituloCuatro.estadoActual }}"readonly>
                     </mat-form-field>
-
+    
                     <mat-form-field>
                         <mat-label>4.10 - El servicio que se presta en el predio adjudicado es</mat-label>
                         <input matInput value="{{ (item | async)?.capituloCuatro.calidadServicioPrestado }}"readonly>
                     </mat-form-field>
-
+    
                     <mat-form-field>
                         <mat-label>4.11 - ¿Se han invertido recursos para mejorar la calidad de los servicios o actividades desarrolladas dentro del predio?</mat-label>
                         <input matInput value="{{ (item | async)?.capituloCuatro.inversionActividades }}"readonly>
                     </mat-form-field>
-
+    
                     <mat-form-field *ngIf="(item | async)?.capituloCuatro.inversionActividades == 'si'">
                         <mat-label>4.11.1 - En que fecha se realizó la inversión</mat-label>
                         <input matInput value="{{ (item | async)?.capituloCuatro.inversionActividadesTiempo }}" readonly>
                     </mat-form-field>
-
+    
                     <mat-form-field>
                         <mat-label>4.12 - Observaciones Capitulo 4</mat-label>
                         <textarea matInput value="{{ (item | async)?.capituloCuatro.observacionesCapituloCuatro }}"></textarea>
                     </mat-form-field>  
                 </mat-expansion-panel>
-
+    
                 <br>
-
+    
                 <mat-expansion-panel [expanded]="true">
                     <mat-expansion-panel-header>
                         <mat-panel-title>
@@ -392,7 +392,7 @@
                             Fotos y Observaciones
                         </mat-panel-description>
                     </mat-expansion-panel-header>
-
+    
                     <div class="img-container"  *ngFor="let foto of (item | async)?.fotos">
                         <img mat-card-image src="{{ foto.url }}">
                         <mat-form-field>
@@ -400,15 +400,15 @@
                             <textarea matInput value="{{ foto.observation }}"></textarea>
                         </mat-form-field>
                     </div>
-
+    
                     <div class="img-container" *ngIf="(item | async)?.fotos; else nothing">
-   
+    
                     </div>
-
+    
                     <ng-template #nothing>
                         <div class="tex-nothing"><h3>No hay Imagenes para mostrar</h3></div>
                     </ng-template>
-
+    
                 </mat-expansion-panel>
             </mat-accordion>
         </mat-card-content>

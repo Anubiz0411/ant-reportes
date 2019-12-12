@@ -1,7 +1,7 @@
 <nav *ngIf="auth.user$ | async">
-    <mat-toolbar  class="navbar" layout-align="center" flex>
+    <mat-toolbar  class="navbar no-print" layout-align="center" flex>
         Registros de Datos
-        <div class="button-logut">
+        <div class="button-logut no-print">
             <button class="logut-button" mat-button (click)="signOut()">Cerrar Sesión</button>
         </div>
     </mat-toolbar>
