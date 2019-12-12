@@ -22,6 +22,8 @@ export class IndexComponent implements OnInit, AfterViewInit {
 
   /* Filtros */
   solicitiudFilter                = new FormControl('');
+  departamentoFilter              = new FormControl('');
+  municipioFilter                 = new FormControl('');
   tipoTerritorioFilter            = new FormControl('');
   zonaManejoFilter                = new FormControl('');
   documentoPropiedadFilter        = new FormControl('');
@@ -42,6 +44,8 @@ export class IndexComponent implements OnInit, AfterViewInit {
 
   filterValues = {
     solicitudEDP: '',
+    departamento: '',
+    municipio: '',
     tipoTerritorio: '',
     zonaManejo: '',
     documentoPropiedad: '',
@@ -103,6 +107,20 @@ export class IndexComponent implements OnInit, AfterViewInit {
     this.solicitiudFilter.valueChanges.subscribe(
       solicitudEDP => {
         this.filterValues.solicitudEDP = solicitudEDP.toLowerCase();
+        this.dataSource.filter = JSON.stringify(this.filterValues);
+      }
+    )
+
+    this.departamentoFilter.valueChanges.subscribe(
+      departamento => {
+        this.filterValues.departamento = departamento.toLowerCase();
+        this.dataSource.filter = JSON.stringify(this.filterValues);
+      }
+    )
+
+    this.municipioFilter.valueChanges.subscribe(
+      municipio => {
+        this.filterValues.municipio = municipio.toLowerCase();
         this.dataSource.filter = JSON.stringify(this.filterValues);
       }
     )
@@ -236,6 +254,8 @@ export class IndexComponent implements OnInit, AfterViewInit {
     let filterFunction = function(data, filter): boolean {
       let searchTerms = JSON.parse(filter);
       return data.solicitudEDP.toLowerCase().indexOf(searchTerms.solicitudEDP) !== -1
+      && data.departamento.toLowerCase().indexOf(searchTerms.departamento) !== -1
+      && data.municipio.toLowerCase().indexOf(searchTerms.municipio) !== -1
       && data.tipoTerritorio.toLowerCase().indexOf(searchTerms.tipoTerritorio) !== -1
       && data.zonaManejo.toLowerCase().indexOf(searchTerms.zonaManejo) !== -1
       && data.documentoPropiedad.toLowerCase().indexOf(searchTerms.documentoPropiedad) !== -1

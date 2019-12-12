@@ -1,12 +1,24 @@
 <nav *ngIf="auth.user$ | async">
-    <mat-toolbar  class="navbar no-print" layout-align="center" flex>
-        Registros de Datos
-        <div class="button-logut no-print">
-            <button class="logut-button" mat-button (click)="signOut()">Cerrar Sesión</button>
-        </div>
-    </mat-toolbar>
-    <!-- <div class="imagen-cabezera">
-        <img class="cabezera-imagen" src="../assets/images/shapes.jpg" alt="" />
-    </div> -->
+    <mat-drawer-container class="example-container" autosize>
+        <mat-drawer #drawer class="example-sidenav" mode="side">
+            <div class="button-logut no-print">
+                <button class="logut-button" mat-button (click)="signOut()">Cerrar Sesión</button>
+            </div>
+        </mat-drawer>
+
+        <mat-toolbar  class="navbar no-print" layout-align="center" flex>
+            <div class="example-sidenav-content">
+                <button type="button" mat-button (click)="drawer.toggle()">
+                    ==
+                </button>
+            </div>
+            Registros de Datos            
+        </mat-toolbar>
+    
+        <!-- <div class="imagen-cabezera">
+            <img class="cabezera-imagen" src="../assets/images/shapes.jpg" alt="" />
+        </div> -->
+        
+    </mat-drawer-container>
 </nav>
 <router-outlet></router-outlet>
