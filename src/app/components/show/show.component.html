@@ -58,16 +58,6 @@
                         <mat-label>1.7 - Coordenadas del Predio Latitud</mat-label>
                         <input matInput value="{{ (item | async)?.capituloUno.latitudPredio }}"readonly>
                     </mat-form-field>
-
-                    <mat-form-field>
-                        <mat-label>1.7 - Coordenadas del Predio Longitud</mat-label>
-                        <input matInput value="{{ (item | async)?.capituloUno.longitudPredio }}"readonly>
-                    </mat-form-field>
-
-                    <mat-form-field>
-                        <mat-label>1.8 - Mi Localización Latitud</mat-label>
-                        <input matInput value="{{ (item | async)?.capituloUno.latitud }}"readonly>
-                    </mat-form-field>
                     
                     <mat-form-field>
                         <mat-label>1.8 - Mi Localización Longitud</mat-label>
@@ -174,11 +164,6 @@
                     </mat-form-field>
 
                     <mat-form-field>
-                        <mat-label>2.5.1 - Fecha final establecido en el acto administrativo de adjudicación para el cumplimiento de la Actividad a desarrollar </mat-label>
-                        <input matInput value="{{ (item | async)?.capituloDos.fechaFinalTiempoEstablecido }}"readonly>
-                    </mat-form-field>
-
-                    <mat-form-field>
                         <mat-label>2.6 - ¿Dentro del predio adjudicado se desarrolla una activdad diferente a la establecida en el acto administrativo de adjudicación?</mat-label>
                         <input matInput value="{{ (item | async)?.capituloDos.actividadDiferente }}"readonly>
                     </mat-form-field>
@@ -206,11 +191,6 @@
                     <mat-form-field>
                         <mat-label>2.9 - Grupo etario beneficiado por la actividad desarrollada en el predio </mat-label>
                         <input matInput value="{{ (item | async)?.capituloDos.grupoEtario }}"readonly>
-                    </mat-form-field>
-
-                    <mat-form-field>
-                        <mat-label>2.10 - ¿El predio se encuentra en estado de abandono?</mat-label>
-                        <input matInput value="{{ (item | async)?.capituloDos.estadoAbandono }}"readonly>
                     </mat-form-field>
 
                     <mat-form-field>
