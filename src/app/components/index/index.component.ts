@@ -282,4 +282,10 @@ export class IndexComponent implements OnInit, AfterViewInit {
     this.router.navigateByUrl('/graph', {state: {displayedColumns: this.displayedColumns, data: this.dataSource.filteredData} });
   }
 
+
+  downloadData() {
+    window.open('https://us-central1-ant-app-7ee04.cloudfunctions.net/cssJsonReport', '_blank');
+    
+  }
+
 }
