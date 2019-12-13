@@ -339,6 +339,55 @@ export class GraphComponent implements OnInit {
         }]
       });
       chart.render();
+
+      let departamentoDataPoints: any = []
+
+      for(let departamento in this.ocurrencies['departamento']) {
+        if (departamento !== '') {
+          departamentoDataPoints.push({
+            label: departamento,
+            y: this.ocurrencies['departamento'][departamento]
+          });
+        }
+      }
+
+      chart = new CanvasJS.Chart("departamento", {
+        animationEnabled: true,
+        exportEnabled: true,
+        title: {
+          text: "1.1 - Departamento"
+        },
+        data: [{
+          type: "column",
+          dataPoints: departamentoDataPoints
+        }]
+      });
+      chart.render();
+
+      let municipioDataPoints: any = []
+
+      for(let municipio in this.ocurrencies['municipio']) {
+        console.log(municipio);
+        if (municipio !== '') {
+          municipioDataPoints.push({
+            label: municipio,
+            y: this.ocurrencies['municipio'][municipio]
+          });
+        }
+      }
+
+      chart = new CanvasJS.Chart("municipio", {
+        animationEnabled: true,
+        exportEnabled: true,
+        title: {
+          text: "1.2 - Municipio"
+        },
+        data: [{
+          type: "column",
+          dataPoints: municipioDataPoints
+        }]
+      });
+      chart.render();
     }
   }
 

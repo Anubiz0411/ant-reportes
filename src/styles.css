@@ -33,6 +33,10 @@ div.formularios > .mat-card > .mat-card-content > .mat-accordion > .mat-expansio
     display: block;
 }
 
+.canvasjs-chart-credit {
+    display: none;
+}
+
 @media print
 {    
     .no-print, .no-print *
